@@ -1,7 +1,6 @@
 <?php
     /*
-        this function checks if a user can login
-        and return TRUE or FALSE 
+        this function checks if a user can login and return TRUE or FALSE 
     */
     function canILogin( $username, $password ){
         $conn = new mysqli("localhost", "root", "root", "talktype");
