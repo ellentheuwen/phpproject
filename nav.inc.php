@@ -1,6 +1,8 @@
 <nav class="navbar">
-    <a href="index.php" id="logo">Let's Talk Type</a>
+    <a href="index.php" id="logo">Let's <br> Talk <br>Type</a>
 
+    <a href="#">Upload</a>
+    
     <form action="" method="get">
       <input type="text" name="search">
     </form>

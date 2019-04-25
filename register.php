@@ -43,6 +43,7 @@
 	<div class="talktypeLogin talktypeLogin--register">
 		<div class="form form--login">
 			<form action="" method="post">
+				<h1>Let's Talk Type</h1>
 				<h2 form__title>Let's register first buddy</h2>
 
                 <?php if(isset($error)): ?>
