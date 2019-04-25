@@ -18,7 +18,7 @@
 				}
 			}
 			else {
-				$error = "Your passwords are not secure or do not match.";
+				$error = "We can't log you in with that password. Can you try again?";
 			}
         }
         catch(Exception $e) {
@@ -30,14 +30,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>IMDFlix</title>
+  <title>Let's Talk Type - Register</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+
 </head>
 <body>
-	<div class="netflixLogin netflixLogin--register">
+	<div class="talktypeLogin talktypeLogin--register">
 		<div class="form form--login">
 			<form action="" method="post">
-				<h2 form__title>Sign up for an account</h2>
+				<h2 form__title>Let's register first buddy</h2>
 
                 <?php if(isset($error)): ?>
 				<div class="form__error">
@@ -61,11 +63,14 @@
 				<div class="form__field">
 					<input type="submit" value="Sign me up!" class="btn btn--primary">	
 				</div>
+
+				<p>Already got an account? <a href="login.php">Log in here</a></p>
+
 			</form>
 		</div>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="js/imdflix.js"></script>
+	<script src="js/talktype.js"></script>
 </body>
 </html>

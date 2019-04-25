@@ -2,7 +2,7 @@
 
     $db = [
         "host"      => 'localhost',
-        "dbname"    => 'netflix',
+        "dbname"    => 'talktype',
         "username"  => "root",
         "password"  => "root",
     ];

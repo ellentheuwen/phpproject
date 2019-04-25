@@ -22,40 +22,45 @@
 
 	} 
 
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>IMDFlix</title>
+  <title>Let's Talk Type - Log in</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+
 </head>
 <body>
-	<div class="netflixLogin">
+	<div class="talktypeLogin">
 		<div class="form form--login">
 			<form action="" method="post">
-				<h2 form__title>Sign In</h2>
+				<h2 form__title>Hi! Sign in to talk</h2>
 
 				<?php if( isset($error) ): ?>
 				<div class="form__error">
 					<p>
-						Sorry, we can't log you in with that email address and password. Can you try again?
+						Sorry, have you written a typo maybe? Try again to log in.
 					</p>
 				</div>
 				<?php endif; ?>
 
 				<div class="form__field">
-					<label for="email">Email</label>
-					<input type="text" id="email" name="email">
+					<input type="text" id="email" name="email" placeholder="Email">
 				</div>
 				<div class="form__field">
-					<label for="password">Password</label>
-					<input type="password" id="password" name="password">
+					<input type="password" id="password" name="password" placeholder="Password">
 				</div>
 
 				<div class="form__field">
 					<input type="submit" value="Sign in" class="btn btn--primary">	
 					<input type="checkbox" id="rememberMe"><label for="rememberMe" class="label__inline">Remember me</label>
+					<p>No account yet? <a href="register.php">Register here</a></p>
+
+				
 				</div>
+
 			</form>
 		</div>
 	</div>

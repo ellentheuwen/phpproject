@@ -2,47 +2,47 @@
     include_once('Db.class.php');
 
     class Item {
-        private $title;
-        private $poster;
+        private $description;
+        private $picture;
 
         
 
         /**
-         * Get the value of title
+         * Get the value of description
          */ 
-        public function getTitle()
+        public function getDescription()
         {
-                return $this->title;
+                return $this->description;
         }
 
         /**
-         * Set the value of title
+         * Set the value of description
          *
          * @return  self
          */ 
-        public function setTitle($title)
+        public function setDescription($description)
         {
-                $this->title = $title;
+                $this->description = $description;
 
                 return $this;
         }
 
         /**
-         * Get the value of poster
+         * Get the value of picture
          */ 
-        public function getPoster()
+        public function getPicture()
         {
-                return $this->poster;
+                return $this->picture;
         }
 
         /**
-         * Set the value of poster
+         * Set the value of picture
          *
          * @return  self
          */ 
-        public function setPoster($poster)
+        public function setPicture($picture)
         {
-                $this->poster = $poster;
+                $this->picture = $picture;
 
                 return $this;
         }
@@ -53,7 +53,7 @@
         */
         public static function getAll() {
             $conn = Db::getInstance();
-            $statement = $conn->prepare('select * from collection');
+            $statement = $conn->prepare('select * from posts');
             $statement->execute();
             return $statement->fetchAll(PDO::FETCH_ASSOC);
         }
@@ -63,7 +63,7 @@
         */
         public static function find($id) {
             $conn = Db::getInstance();
-            $statement = $conn->prepare("select * from collection where id = :id");
+            $statement = $conn->prepare("select * from posts where id = :id");
             $statement->bindParam(":id", $id);
             $statement->execute();
             return $statement->fetch(PDO::FETCH_ASSOC);

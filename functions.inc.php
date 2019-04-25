@@ -4,7 +4,7 @@
         and return TRUE or FALSE 
     */
     function canILogin( $username, $password ){
-        $conn = new mysqli("localhost", "root", "root", "netflix");
+        $conn = new mysqli("localhost", "root", "root", "talktype");
         
         $query = "select * from users where email = '".$conn->real_escape_string($username)."'";
         $result = $conn->query($query);

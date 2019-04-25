@@ -5,15 +5,16 @@
 
   User::checkLogin();
 
-  $collection = Item::getAll();
+  $posts= Item::getAll();
 
 
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>IMDFlix</title>
+  <title>Let's Talk Type - Home</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
 </head>
 <body>
   
@@ -21,8 +22,8 @@
   <?php include_once("nav.inc.php"); ?>
   
   <div class="collection">
-    <?php foreach($collection as $c): ?>
-    <a href="details.php?watch=<?php echo $c['id']; ?>" class="collection__item" style="background-image: url(<?php echo $c['poster']; ?>)">
+    <?php foreach($posts as $p): ?>
+    <a href="details.php?watch=<?php echo $p['id']; ?>" class="collection__item" style="background-image: url(<?php echo $p['picture']; ?>)">
     </a>
     <?php endforeach; ?>
   </div>
