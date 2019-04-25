@@ -23,12 +23,13 @@ body {
 }
 
 .navbar a {
-	color:#1C3B6D;
-	font-size: 0.8em;
-	text-decoration: none;
-	display: inline-block;
-	margin-right: 4em;
-	margin-left: 4em;
+    color: #1C3B6D;
+    font-size: 0.8em;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 4em;
+    margin-top: 1em;
+    margin-left: 4em;
 }
 
 a.navbar__logout {
@@ -36,15 +37,19 @@ a.navbar__logout {
 	margin-right: 3em;
 }
 
-.navbar .logo {
-	font-weight: 100;
-	margin-right: 4em;
+#logo {
+    margin-left: 2em;
+    font-family: 'Staatliches', cursive;
+	font-size: 1.6em;
+	margin-bottom: 12px;
 }
 
 .navbar form {
 	flex: 1 1 30%;
 	align-self: flex-end;
 	text-align: right;
+	margin-bottom: 16px;
+	margin-right: 150px;
 }
 
 .navbar input {

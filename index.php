@@ -15,7 +15,7 @@
   <title>Let's Talk Type - Home</title>
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
-</head>
+  <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet"></head>
 <body>
   
   <div id="netflix">

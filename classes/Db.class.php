@@ -14,7 +14,7 @@
 
 
             if( self::$conn == null ){
-                self::$conn = new PDO('mysql:host='.$db['host'].';dbname=', $db['username'], $db['password']);
+                self::$conn = new PDO('mysql:host='.$db['host'].';dbname=talktype', $db['username'], $db['password']);
                 // echo "💩";
                 return self::$conn;
                 

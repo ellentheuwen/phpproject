@@ -1,5 +1,5 @@
 <nav class="navbar">
-    <a href="index.php" class="logo">Let's Talk Type</a>
+    <a href="index.php" id="logo">Let's Talk Type</a>
 
     <form action="" method="get">
       <input type="text" name="search">
