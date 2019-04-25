@@ -10,5 +10,6 @@
     <a href="#">Settings</a>
     <a href="#">|</a>
 
-    <a href="logout.php" class="navbar__logout">Hi <?php echo $_SESSION['fullname']; ?>, logout?</a>
+    <!-- fullname tonen hier werkt nog niet -->
+    <a href="logout.php" class="navbar__logout">Hi <?php echo $_SESSION["fullname"]; ?>, logout?</a>
 </nav>
