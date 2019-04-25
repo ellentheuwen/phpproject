@@ -26,7 +26,7 @@
                 throw new Exception("Email cannot be empty.");
             }
 
-            // todo: valid email ? -> filter_var()
+			Security::isEmailValid($email); // valid email?
 
             $this->email = $email;
             return $this;

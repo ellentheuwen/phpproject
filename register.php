@@ -8,17 +8,22 @@
             $security = new Security();
             $security->password = $_POST['password'];
             $security->passwordConfirmation = $_POST['password_confirmation'];
+			
+			
+			$email = htmlspecialchars($_POST['email']);
+    		$password = $_POST['password'];
 
             if( $security->passwordsAreSecure() ){
-                $user = new User();        
-                $user->setEmail( $_POST['email'] );
-				$user->setPassword( $_POST['password'] );
+				$user = new User();        
+				$user->setEmail($email);
+				$user->setPassword($password);
 				if( $user->register() ) {
 					$user->login();
+
 				}
 			}
 			else {
-				$error = "We can't log you in with that password. Can you try again?";
+				$error = "We can't register in with that password. Can you try again?";
 			}
         }
         catch(Exception $e) {
