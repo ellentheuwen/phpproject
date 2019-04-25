@@ -30,13 +30,15 @@
             }
             else {
                 return false;
+				throw new Exception("Your passwords do not match.");
+
             }
         }
 		
 		// checks if a given email is valid
         public static function isEmailValid($email){
             if ( !filter_var($email, FILTER_VALIDATE_EMAIL) ){
-                throw new Exception("Oops, This doesn't look like a valid email.");
+                throw new Exception("Oops, that doesn't look like a valid email.");
             }else{
                     return true;
                 }

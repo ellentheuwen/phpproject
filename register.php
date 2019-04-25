@@ -19,7 +19,6 @@
 				$user->setPassword($password);
 				if( $user->register() ) {
 					$user->login();
-
 				}
 			}
 			else {
