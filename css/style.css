@@ -1,4 +1,4 @@
-*{
+* {
 	box-sizing: border-box;
 }
 
@@ -7,7 +7,6 @@
 }
 
 body {
-
 	background-color: #F3EFF0;
 	color: #F3EFF0;
 	font-family: 'Overpass', sans-serif;
@@ -21,9 +20,9 @@ body {
 	justify-content: flex-start;
 	padding: 0.5em;
 	box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-	background-color: white;
+	background: url(../images/back.svg) no-repeat center center fixed; 
+	background-size: cover;
 }
-
 .navbar a {
     color: #1C3B6D;
     font-size: 0.8em;
@@ -84,7 +83,7 @@ a.navbar__logout {
 	grid-template-rows: 1fr [form] 1fr 1fr;
 	justify-content: center;
 	align-items: center;
-	background-image: url(../images/background.jpg);
+	background-image: url(../images/back.svg);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -94,14 +93,51 @@ a.navbar__logout {
 	color: tomato;
 }
 
+.form__title {
+	font-size: 20px;
+	margin-top: -20px;
+	text-align: center;
+ }
+
 .form--login {
-	background-color: rgba(243, 239, 240, 0.8);
-	padding: 1em;
+	width: 500px;
+	background-color: white;
+	padding: 4em 2em;
 	color: #505050;
 	grid-column: form;
-	grid-row: form;
-	border-radius: 10%;
+	margin-top: 5em;
+	border-radius: 30px;
+	box-shadow: 0 0px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1)
+}
 
+#gotAccount {
+	text-align: center;
+}
+
+.inputField {
+    width: 95%;
+    height: 28px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+	border-bottom: 2px solid #BAC7BA;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	outline: none;
+	font-size: 11px;
+}
+
+.form input::placeholder {
+	font-family: 'Overpass', sans-serif;
+	color: rgba(204, 190, 190, 0.5);
+	margin-bottom: 5px;
+}
+
+.form textarea::placeholder {
+	font-family: 'Overpass', sans-serif;
+	color: rgba(204, 190, 190, 0.5);
+	margin-bottom: 5px;
 }
 
 .form__error {
@@ -126,41 +162,18 @@ a.navbar__logout {
 	display: inline-block;
 }
 
-.form__field input[type=text],
-.form__field input[type=password] {
-	width: 100%;
-	padding: 0.3em;
-	font-size: 1.4em;
-}
-
 .btn {
 	width: 100%;
 	margin: 0.5em auto;
 }
 
 .btn--primary {
-	background-color: #253065;
+	font-family: 'Staatliches', cursive;
+	background-color: #E2BD6B;
 	color: white;
 	text-align: center;
 	border: none;
 	padding: 0.3em 2em;
 	font-size: 1.4em;
-}
-
-.collectionDetails {
-	padding: 3em 1em;
-	margin-top: 1em;
-	background-size: cover;
-	padding-right: 40%;
-}
-
-.collectionDetails__title {
-	font-size: 3em;
-	font-weight: lighter;
-
-	border-bottom: 3px solid red;
-}
-
-.collectionDetails__desc {
-	color: #999999;
+	border-radius: 50px;
 }

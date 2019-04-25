@@ -1,11 +1,11 @@
 <?php
-    /*
-        this function checks if a user can login and return TRUE or FALSE 
-    */
+    // this function checks if a user can login and return TRUE or FALSE 
     function canILogin( $username, $password ){
         $conn = new mysqli("localhost", "root", "root", "talktype");
         
-        $query = "select * from users where email = '".$conn->real_escape_string($username)."'";
+        // username because people like it short, email only in use for marketing :-)
+        $query = "select * from users where username = '".$conn->real_escape_string($username)."'";
+
         $result = $conn->query($query);
         if( $result->num_rows == 1 ) {
             $user = $result->fetch_assoc();
@@ -13,7 +13,6 @@
                 return true;
             }   
         }
-
         return false;
     
     }

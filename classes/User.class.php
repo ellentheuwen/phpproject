@@ -4,6 +4,7 @@
     class User {
         private $email;
         private $password;
+        private $username;
         private $db;
 
 
@@ -52,25 +53,41 @@
                 return $this;
         }
 
+        /**
+         * Get the value of username
+         */ 
+        public function getUsername()
+        {
+                return $this->username;
+        }
 
-        /*
-            Registers a user into the database
-            @return true if successful
-            @return false if unsuccessful
-        */
+        /**
+         * Set the value of username
+         *
+         * @return  self
+         */ 
+        public function setUsername($username)
+        {
+                $this->username = $username;
+
+                return $this;
+        }
+
+        // Registers a user into the database  @return true if successful @return false if unsuccessful
         public function register() {
             // connectie
             $conn = Db::getInstance();
 
             // query (sql injectie!!!)
             $statement = $conn->prepare("insert into users
-                                         (email, password)
-                                         values (:email, :password)
+                                         (email, password, username)
+                                         values (:email, :password, :username)
                                         ");
             
             $hash = password_hash($this->password, PASSWORD_BCRYPT);
 
             $statement->bindParam(":email", $this->email);
+            $statement->bindParam(":username", $this->username);
             $statement->bindParam(":password", $hash);
 
             // execute
@@ -78,34 +95,28 @@
             return $result;
         }
 
-        /*
-            Create a user session
-            Redirect to the index page
-        */
+        // Create a user session, redirect to the index page
+
         public function login() {
             if(!isset($_SESSION)) { 
                 session_start(); 
             } 
-            $_SESSION['username'] = $this->email;
+            $_SESSION['email'] = $this->email;
             header('Location: index.php');
         }
 
-        /*
-            Check if a user is logged in
-            If not, redirect to login
-        */
+        // Check if a user is logged in. If not, redirect to login
         public static function checkLogin(){
             if(!isset($_SESSION)) { 
                 session_start(); 
             }
-            if(!isset($_SESSION['username'])){
+            if(!isset($_SESSION['email'])){
                 header('Location: login.php');
             }
         }
 
-        /*
-            Find a user based on email addres
-        */
+        // Find a user based on email addres
+
         public static function findByEmail($email){
             $conn = Db::getInstance();
             $statement = $conn->prepare("select * from users where email = :email limit 1");
@@ -114,7 +125,7 @@
             return $statement->fetch(PDO::FETCH_ASSOC);
         }
 
-        /* Check if a user exists based on a give email address */
+        // Check if a user exists based on a give email address */
         public static function isAccountAvailable($email){
             $u = self::findByEmail($email);
             
@@ -126,4 +137,5 @@
             }
         }
 
+        
     }

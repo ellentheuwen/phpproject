@@ -5,7 +5,7 @@
 
     $email = $_POST['email'];
     $response = [];
-    if( User::isAccountAvailable($email) ){
+    if( User::isAccountAvailable($username) ){
         $response['status'] = 'success';   
     }
     else {

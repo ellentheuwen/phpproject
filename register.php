@@ -11,11 +11,14 @@
 			
 			
 			$email = htmlspecialchars($_POST['email']);
+			$username = htmlspecialchars($_POST['username']);
+
     		$password = $_POST['password'];
 
             if( $security->passwordsAreSecure() ){
 				$user = new User();        
 				$user->setEmail($email);
+				$user->setUsername($username);
 				$user->setPassword($password);
 				if( $user->register() ) {
 					$user->login();
@@ -37,14 +40,15 @@
   <title>Let's Talk Type - Register</title>
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet"></head>
 
 </head>
 <body>
 	<div class="talktypeLogin talktypeLogin--register">
+
 		<div class="form form--login">
 			<form action="" method="post">
-				<h1>Let's Talk Type</h1>
-				<h2 form__title>Let's register first buddy</h2>
+				<h2 class="form__title">Welcome to the Type family</h2>
 
                 <?php if(isset($error)): ?>
 				<div class="form__error">
@@ -55,21 +59,26 @@
                 <?php endif; ?>
 
 				<div class="form__field">
-					<input value="" type="text" id="email" name="email" placeholder="What's your e-mail?">
+					<input value="" type="text" id="email" name="email" placeholder="What's your e-mail?" class="inputField">
 				</div>
+
 				<div class="form__field">
-					<input type="password" id="password" name="password" placeholder="Choose a password">
+					<input type="text" id="username" name="username" placeholder="Got an username?" class="inputField">
+				</div>
+
+				<div class="form__field">
+					<input type="password" id="password" name="password" placeholder="Choose a password" class="inputField">
 				</div>
 
                 <div class="form__field">
-					<input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm your password">
+					<input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm your password" class="inputField">
 				</div>
 
 				<div class="form__field">
 					<input type="submit" value="Sign me up!" class="btn btn--primary">	
 				</div>
 
-				<p>Already got an account? <a href="login.php">Log in here</a></p>
+				<p id="gotAccount">Already got an account? <a href="login.php">Log in here</a></p>
 
 			</form>
 		</div>
