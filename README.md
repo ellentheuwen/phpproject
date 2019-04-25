@@ -4,3 +4,5 @@ Saw a nice font on the street? Post it! Got an email with a typo in it? Share it
 
 ## Contributors
 Ellen Theuwen, Micheline Van Looveren, Lowie Aelbrecht
+
+## Coding standards
