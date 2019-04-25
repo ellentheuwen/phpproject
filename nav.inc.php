@@ -10,5 +10,5 @@
     <a href="#">Settings</a>
     <a href="#">|</a>
 
-    <a href="logout.php" class="navbar__logout">Hi <?php echo $_SESSION['username']; ?>, log out?</a>
+    <a href="logout.php" class="navbar__logout">Hi <?php echo $_SESSION['fullname']; ?>, logout?</a>
 </nav>

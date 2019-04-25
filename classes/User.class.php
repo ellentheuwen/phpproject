@@ -4,9 +4,9 @@
     class User {
         private $email;
         private $password;
+        private $fullname;
         private $username;
         private $db;
-
 
         /**
          * Get the value of email
@@ -54,6 +54,26 @@
         }
 
         /**
+         * Get the value of fullname
+         */ 
+        public function getFullname()
+        {
+                return $this->fullname;
+        }
+
+        /**
+         * Set the value of fullname
+         *
+         * @return  self
+         */ 
+        public function setFullname($fullname)
+        {
+                $this->fullname = $fullname;
+
+                return $this;
+        }
+
+        /**
          * Get the value of username
          */ 
         public function getUsername()
@@ -80,13 +100,14 @@
 
             // query (sql injectie!!!)
             $statement = $conn->prepare("insert into users
-                                         (email, password, username)
-                                         values (:email, :password, :username)
+                                         (email, password, fullname, username)
+                                         values (:email, :password, :fullname, :username)
                                         ");
             
             $hash = password_hash($this->password, PASSWORD_BCRYPT);
 
             $statement->bindParam(":email", $this->email);
+            $statement->bindParam(":fullname", $this->fullname);
             $statement->bindParam(":username", $this->username);
             $statement->bindParam(":password", $hash);
 
@@ -96,7 +117,6 @@
         }
 
         // Create a user session, redirect to the index page
-
         public function login() {
             if(!isset($_SESSION)) { 
                 session_start(); 
@@ -116,7 +136,6 @@
         }
 
         // Find a user based on email addres
-
         public static function findByEmail($email){
             $conn = Db::getInstance();
             $statement = $conn->prepare("select * from users where email = :email limit 1");
@@ -137,5 +156,4 @@
             }
         }
 
-        
     }

@@ -12,6 +12,7 @@
 			
 			$email = htmlspecialchars($_POST['email']);
 			$username = htmlspecialchars($_POST['username']);
+			$fullname= htmlspecialchars($_POST['fullname']);
 
     		$password = $_POST['password'];
 
@@ -20,6 +21,7 @@
 				$user->setEmail($email);
 				$user->setUsername($username);
 				$user->setPassword($password);
+				$user->setFullname($fullname);
 				if( $user->register() ) {
 					$user->login();
 				}
@@ -59,11 +61,15 @@
                 <?php endif; ?>
 
 				<div class="form__field">
-					<input value="" type="text" id="email" name="email" placeholder="What's your e-mail?" class="inputField">
+					<input type="text" id="username" name="username" placeholder="Create an username" class="inputField">
 				</div>
 
 				<div class="form__field">
-					<input type="text" id="username" name="username" placeholder="Got an username?" class="inputField">
+					<input type="text" id="fullname" name="fullname" placeholder="Give me your fullname" class="inputField">
+				</div>
+
+				<div class="form__field">
+					<input value="" type="text" id="email" name="email" placeholder="What's your e-mail?" class="inputField">
 				</div>
 
 				<div class="form__field">
