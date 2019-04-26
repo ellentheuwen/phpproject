@@ -105,7 +105,6 @@
                                         ");
             
             $hash = password_hash($this->password, PASSWORD_BCRYPT);
-
             $statement->bindParam(":email", $this->email);
             $statement->bindParam(":fullname", $this->fullname);
             $statement->bindParam(":username", $this->username);
@@ -143,17 +142,4 @@
             $statement->execute();
             return $statement->fetch(PDO::FETCH_ASSOC);
         }
-
-        // Check if a user exists based on a give email address */
-        public static function isAccountAvailable($email){
-            $u = self::findByEmail($email);
-            
-            // PDO returns false if no records are found so let's check for that
-            if($u == false){
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-    }
+}

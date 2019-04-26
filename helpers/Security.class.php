@@ -43,5 +43,6 @@
                     return true;
                 }
         }
-		
+
+        // CHECK IF USERNAME IS ALREADY TAKEN?! 
     }

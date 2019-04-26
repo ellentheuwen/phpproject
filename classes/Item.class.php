@@ -5,8 +5,6 @@
         private $description;
         private $picture;
 
-        
-
         /**
          * Get the value of description
          */ 
