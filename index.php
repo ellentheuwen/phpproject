@@ -8,6 +8,7 @@
   $posts= Item::getAll();
 
 
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,9 +22,9 @@
   <div id="netflix">
   <?php include_once("nav.inc.php"); ?>
   
-  <div class="collection">
+  <div class="feed">
     <?php foreach($posts as $p): ?>
-    <a href="details.php?watch=<?php echo $p['id']; ?>" class="collection__item" style="background-image: url(<?php echo $p['picture']; ?>)">
+    <a href="details.php?watch=<?php echo $p['id']; ?>" class="feed__posts" style="background-image: url(<?php echo $p['picture']; ?>)">
     </a>
     <?php endforeach; ?>
   </div>

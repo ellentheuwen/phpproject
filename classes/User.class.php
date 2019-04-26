@@ -176,4 +176,24 @@
                 return false;
             }
         }
+
+        // Change profile settings
+        public function changeSettings() {
+            // connectie
+            $conn = Db::getInstance();
+            // query (sql injectie!!!)
+            $statement = $conn->prepare("update users set username = :username, firstname = :firstname, lastname = :lastname, email = :email, password = :password");
+            
+            $hash = password_hash($this->password, PASSWORD_BCRYPT);
+            $statement->bindParam(":email", $this->email);
+            $statement->bindParam(":firstname", $this->firstname);
+            $statement->bindParam(":lastname", $this->lastname);
+            $statement->bindParam(":username", $this->username);
+            $statement->bindParam(":password", $hash);
+
+            // execute
+            $result = $statement->execute();
+            return $result;
+
+        }
     }

@@ -7,7 +7,7 @@
       <input type="text" name="search">
     </form>
     
-    <a href="#">Settings</a>
+    <a href="profilesettings.php">Settings</a>
     <a href="#">|</a>
 
     <!-- fullname tonen hier werkt nog niet -->

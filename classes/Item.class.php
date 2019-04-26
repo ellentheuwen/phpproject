@@ -46,8 +46,7 @@
         }
 
         /*
-            Get all items from the database
-            @return array
+            Get all items from the database @return array
         */
         public static function getAll() {
             $conn = Db::getInstance();
