@@ -52,8 +52,7 @@
 
 				<div class="form__field">
 					<input type="submit" value="Sign in!" class="btn btn--primary">	
-					<input type="checkbox" id="rememberMe"><label for="rememberMe" class="label__inline">Remember me</label>
-					<p>New Type Talker? <a href="register.php">Create account!</a></p>
+					<p id ="getAccount">New Type Talker? <a href="register.php">Create account!</a></p>
 
 				
 				</div>
