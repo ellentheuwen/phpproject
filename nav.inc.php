@@ -11,5 +11,5 @@
     <a href="#">|</a>
 
     <!-- fullname tonen hier werkt nog niet -->
-    <a href="logout.php" class="navbar__logout">Hi <?php echo $_SESSION["fullname"]; ?>, logout?</a>
+    <a href="logout.php" class="navbar__logout">Hi <?php if ( isset($username) ){echo $username;} ?>, logout?</a>
 </nav>

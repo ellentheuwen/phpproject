@@ -4,7 +4,8 @@
     class User {
         private $email;
         private $password;
-        private $fullname;
+        private $firstname;
+        private $lastname;
         private $username;
         private $db;
 
@@ -54,21 +55,41 @@
         }
 
         /**
-         * Get the value of fullname
+         * Get the value of firstname
          */ 
-        public function getFullname()
+        public function getFirstname()
         {
-                return $this->fullname;
+                return $this->firstname;
         }
 
         /**
-         * Set the value of fullname
+         * Set the value of firstname
          *
          * @return  self
          */ 
-        public function setFullname($fullname)
+        public function setFirstname($firstname)
         {
-                $this->fullname = $fullname;
+                $this->firstname = $firstname;
+
+                return $this;
+        }
+
+                /**
+         * Get the value of lasttname
+         */ 
+        public function getLastname()
+        {
+                return $this->lastname;
+        }
+
+        /**
+         * Set the value of lastname
+         *
+         * @return  self
+         */ 
+        public function setLastname($lastname)
+        {
+                $this->lastname = $lastname;
 
                 return $this;
         }
@@ -100,13 +121,14 @@
 
             // query (sql injectie!!!)
             $statement = $conn->prepare("insert into users
-                                         (email, password, fullname, username)
-                                         values (:email, :password, :fullname, :username)
+                                         (email, password, firstname, lastname, username)
+                                         values (:email, :password, :firstname, :lastname, :username)
                                         ");
             
             $hash = password_hash($this->password, PASSWORD_BCRYPT);
             $statement->bindParam(":email", $this->email);
-            $statement->bindParam(":fullname", $this->fullname);
+            $statement->bindParam(":firstname", $this->firstname);
+            $statement->bindParam(":lastname", $this->lastname);
             $statement->bindParam(":username", $this->username);
             $statement->bindParam(":password", $hash);
 
@@ -142,4 +164,16 @@
             $statement->execute();
             return $statement->fetch(PDO::FETCH_ASSOC);
         }
-}
+
+        // Check if a user exists based on a give email address */
+        public static function isAccountAvailable($email){
+            $u = self::findByEmail($email);
+            
+            // PDO returns false if no records are found so let's check for that
+            if($u == false){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }

@@ -12,7 +12,9 @@
 			
 			$email = htmlspecialchars($_POST['email']);
 			$username = htmlspecialchars($_POST['username']);
-			$fullname= htmlspecialchars($_POST['fullname']);
+			$firstname= htmlspecialchars($_POST['firstname']);
+			$lastname= htmlspecialchars($_POST['lastname']);
+
 
     		$password = $_POST['password'];
 
@@ -21,7 +23,9 @@
 				$user->setEmail($email);
 				$user->setUsername($username);
 				$user->setPassword($password);
-				$user->setFullname($fullname);
+				$user->setFirstname($firstname);
+				$user->setLastname($lastname);
+
 				if( $user->register() ) {
 					$user->login();
 				}
@@ -65,7 +69,11 @@
 				</div>
 
 				<div class="form__field">
-					<input type="text" id="fullname" name="fullname" placeholder="Give me your fullname" class="inputField">
+					<input type="text" id="firstname" name="firstname" placeholder="Tell us your firstname" class="inputField">
+				</div>
+
+				<div class="form__field">
+					<input type="text" id="lastname" name="lastname" placeholder="And your lastname" class="inputField">
 				</div>
 
 				<div class="form__field">
