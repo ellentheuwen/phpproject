@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Gegenereerd op: 26 apr 2019 om 16:27
+-- Gegenereerd op: 28 apr 2019 om 14:42
 -- Serverversie: 5.7.23
 -- PHP-versie: 7.2.10
 
@@ -31,7 +31,7 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `description`, `picture`) VALUES
-(1, 'Dit is een voorbeeld. #voorbeeld', 'http://www.sickchirpse.com/wp-content/uploads/2017/10/Black-Mirror.jpg');
+(1, 'Dit is een voorbeeld. #voorbeeld #logo', 'https://www.business-punk.com/wp-content/uploads/2018/04/logo2-400x400.jpg');
 
 -- --------------------------------------------------------
 
@@ -53,7 +53,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `username`, `firstname`, `lastname`) VALUES
-(22, 'test@test.com', '$2y$10$7QCw9BU7Hu7N9sDTH.u93Oey5guyxIlRDHfAqFvEOX5sZZWaz7.1C', 'tester', 'test', 'test');
+(22, 'test2@test.com', '$2y$10$PaLBsSJl.lz8f5VdXFRe2uwLgjwpTIY.2cz2VIfMRMUidXgDPhcbe', 'tester3', 'test2', 'test2'),
+(23, 'test2@test.com', '$2y$10$PaLBsSJl.lz8f5VdXFRe2uwLgjwpTIY.2cz2VIfMRMUidXgDPhcbe', 'tester3', 'test2', 'test2');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -85,4 +86,4 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
