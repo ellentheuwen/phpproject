@@ -35,7 +35,7 @@ body {
 	background-color: #E2BD6B;
 }
 .navbar a {
-    color: #1C3B6D;
+    color: white;
     font-size: 0.8em;
     text-decoration: none;
     display: inline-block;
@@ -54,6 +54,7 @@ a.navbar__logout {
     font-family: 'Staatliches', cursive;
 	font-size: 1.6em;
 	margin-bottom: 12px;
+	color: #1C3B6C;
 }
 
 .navbar form {
@@ -74,10 +75,12 @@ a.navbar__logout {
 }
 
 .feed {
-	margin-top: 2em;
+	margin-top: 0.2em;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 	grid-gap: 1em;
+	padding: 2em;
+
 }
 
 .feed__posts {
