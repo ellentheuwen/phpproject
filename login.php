@@ -33,7 +33,7 @@
 	<div class="talktypeLogin">
 		<div class="form form--login">
 			<form action="" method="post">
-				<h2 class="form__title">Hi! Sign in to talk</h2>
+				<h2 class="form__title">Hi! You've got to log in first buddy</h2>
 
 				<?php if( isset($error) ): ?>
 				<div class="form__error">
@@ -51,8 +51,8 @@
 				</div>
 
 				<div class="form__field">
-					<input type="submit" value="Sign in!" class="btn btn--primary">	
-					<p id ="getAccount">New Type Talker? <a href="register.php">Create account!</a></p>
+					<input type="submit" value="Let's log in!" class="btn btn--primary">	
+					<p id ="getAccount">New here? <a href="register.php">Create an account!</a></p>
 
 				
 				</div>

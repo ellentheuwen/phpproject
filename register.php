@@ -89,7 +89,7 @@
 				</div>
 
 				<div class="form__field">
-					<input type="submit" value="Sign me up!" class="btn btn--primary">	
+					<input type="submit" value="Let's register now!" class="btn btn--primary">	
 				</div>
 
 				<p id="gotAccount">Already got an account? <a href="login.php">Log in here</a></p>
