@@ -1,7 +1,7 @@
 <nav class="navbar">
     <a href="index.php" id="logo">Let's <br> Talk <br>Type</a>
 
-    <a href="#">Upload</a>
+    <a href="#">Upload some cool type</a>
     
     <form action="" method="get">
       <input type="text" name="search">
@@ -11,5 +11,5 @@
     <a href="#">|</a>
 
     <!-- fullname tonen hier werkt nog niet -->
-    <a href="logout.php" class="navbar__logout">Hi <?php if ( isset($username) ){echo $username;} ?>, logout?</a>
+    <a href="logout.php" class="navbar__logout">Log out?</a>
 </nav>
