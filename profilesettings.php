@@ -54,7 +54,7 @@
 
 		<div class="form form--settings">
 			<form action="" method="post">
-				<h2 class="form__title">Change your profile settings</h2>
+			<h2 class="form__title">Let's Talk Type —— Settings </h2>
 
                 <?php if(isset($error)): ?>
 				<div class="form__error">

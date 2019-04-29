@@ -33,7 +33,7 @@
 	<div class="talktypeLogin">
 		<div class="form form--login">
 			<form action="" method="post">
-				<h2 class="form__title">Hi! You've got to log in first buddy</h2>
+			<h2 class="form__title">Let's Talk Type —— Log in </h2>
 
 				<?php if( isset($error) ): ?>
 				<div class="form__error">

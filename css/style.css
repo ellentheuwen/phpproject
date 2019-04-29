@@ -97,7 +97,7 @@ a.navbar__logout {
 	grid-template-rows: 1fr [form] 1fr 1fr;
 	justify-content: center;
 	align-items: center;
-	background-image: url(../images/back1.svg);
+	background-image: url(../images/login.svg);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -109,7 +109,7 @@ a.navbar__logout {
 	grid-template-rows: 1fr [form] 1fr 1fr;
 	justify-content: center;
 	align-items: center;
-	background-image: url(../images/back3.svg);
+	background-image: url(../images/settings.svg);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -121,7 +121,7 @@ a.navbar__logout {
 	grid-template-rows: 1fr [form] 1fr 1fr;
 	justify-content: center;
 	align-items: center;
-	background-image: url(../images/back7.svg);
+	background-image: url(../images/register.svg);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -156,7 +156,7 @@ a.navbar__logout {
 	color: #505050;
 	grid-column: form;
     margin-top: 3em;
-    margin-left: -24em;
+    margin-left: 21em;
 	border-radius: 30px;
 	box-shadow: 0 0px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1)
 }

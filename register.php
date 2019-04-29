@@ -54,7 +54,7 @@
 
 		<div class="form form--register">
 			<form action="" method="post">
-				<h2 class="form__title">Welcome to the Type family</h2>
+				<h2 class="form__title">Let's Talk Type —— Register </h2>
 
                 <?php if(isset($error)): ?>
 				<div class="form__error">
