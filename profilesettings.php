@@ -52,7 +52,7 @@
 <body>
 	<div class="talktypeSettings">
 
-		<div class="form form--login">
+		<div class="form form--settings">
 			<form action="" method="post">
 				<h2 class="form__title">Change your profile settings</h2>
 

@@ -50,9 +50,9 @@
 
 </head>
 <body>
-	<div class="talktypeLogin talktypeLogin--register">
+	<div class="talktypeRegister">
 
-		<div class="form form--login">
+		<div class="form form--register">
 			<form action="" method="post">
 				<h2 class="form__title">Welcome to the Type family</h2>
 
