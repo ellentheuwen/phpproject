@@ -1,7 +1,7 @@
 <nav class="navbar">
     <a href="index.php" id="logo">Let's <br> Talk <br>Type</a>
 
-    <a href="#">Upload some cool type</a>
+    <a href="uploadpost.php">Upload some cool type</a>
     
     <form action="" method="get">
       <input type="text" name="search">
