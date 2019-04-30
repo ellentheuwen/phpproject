@@ -4,9 +4,11 @@
     <a href="uploadpost.php">Upload some cool type</a>
     
     <form action="" method="get">
-      <input type="text" name="search">
+      <input type="text" name="search" placeholder="search">
     </form>
-    
+
+    <a href="#">Profile</a>
+    <a href="#">|</a>
     <a href="profilesettings.php">Settings</a>
     <a href="#">|</a>
 

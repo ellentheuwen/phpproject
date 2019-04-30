@@ -6,9 +6,7 @@
   User::checkLogin();
 
   $posts= Item::getAll();
-
-
-
+  
 ?><!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,5 +1,6 @@
 ------ hier komt uw php nog. die is basically hetzelfde als bij het registeren enzo, maar dan met andere termen. (zie databank)
 + invoerveld voor een bestand te kiezen moet ook nog komen. good luck! 
+--- een class voor items is er wel al deels :) 
 
 <!DOCTYPE html>
 <html lang="en">
