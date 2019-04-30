@@ -133,10 +133,11 @@ a.navbar__logout {
 	grid-template-rows: 1fr [form] 1fr 1fr;
 	justify-content: center;
 	align-items: center;
-	background-image: url(../images/register.svg);
+	background-image: url(../images/upload.svg);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
 .form__hint {
 	display: block;
 	color: tomato;
