@@ -45,18 +45,18 @@
 			<form action="" method="post" enctype="multipart/form-data">
 			<h2 class="form__title">Let's Talk Type —— Upload </h2>
 
-                <?php if(isset($error)): ?>
+			<?php if(isset($error)): ?>
 				<div class="form__error">
 					<p>
 						💩 <?php echo $error; ?>
 					</p>
 				</div>
-								<?php endif; ?>
-								
+                <?php endif; ?>
+
 				<div class="form__field">
-						<input type="file" name="file" id="file" style="display:none;"/>
-						<label for="img" style= "text-align:center; color: #E7A06E;">Click me to choose a post</label>				
-				</div>		
+				<input type="file" name="file" id="img" style="display:none;"/>
+					<label for="img" style= "text-align:center; color: #E7A06E;">Click me to choose what you'd like to post</label>				
+				</div>	
 				
 				<div class="form__field">
 					<input type="text" id="description" name="description" placeholder="Add an description to your image" class="inputField">
