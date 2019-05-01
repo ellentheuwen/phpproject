@@ -1,5 +1,5 @@
 <?php
-    $conn = new mysqli("localhost", "root", "root", "talktype", 8889);
+    $conn = new mysqli("localhost", "root", "root", "talktype");
     if( $conn->connect_errno ) {
         die("Database is gone.");
     }

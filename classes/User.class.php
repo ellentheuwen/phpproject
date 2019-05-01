@@ -1,3 +1,4 @@
+
 <?php
     include_once('Db.class.php');
     
@@ -8,6 +9,7 @@
         private $lastname;
         private $username;
         private $db;
+        private $bio;
 
         /**
          * Get the value of email
@@ -16,7 +18,6 @@
         {
                 return $this->email;
         }
-
         /**
          * Set the value of email
          *
@@ -27,13 +28,10 @@
             if( empty($email) ){
                 throw new Exception("Email cannot be empty.");
             }
-
 			Security::isEmailValid($email); // valid email?
-
             $this->email = $email;
             return $this;
         }
-
         /**
          * Get the value of password
          */ 
@@ -41,7 +39,6 @@
         {
                 return $this->password;
         }
-
         /**
          * Set the value of password
          *
@@ -50,10 +47,8 @@
         public function setPassword($password)
         {
                 $this->password = $password;
-
                 return $this;
         }
-
         /**
          * Get the value of firstname
          */ 
@@ -61,7 +56,6 @@
         {
                 return $this->firstname;
         }
-
         /**
          * Set the value of firstname
          *
@@ -70,10 +64,8 @@
         public function setFirstname($firstname)
         {
                 $this->firstname = $firstname;
-
                 return $this;
         }
-
                 /**
          * Get the value of lasttname
          */ 
@@ -81,7 +73,6 @@
         {
                 return $this->lastname;
         }
-
         /**
          * Set the value of lastname
          *
@@ -90,10 +81,8 @@
         public function setLastname($lastname)
         {
                 $this->lastname = $lastname;
-
                 return $this;
         }
-
         /**
          * Get the value of username
          */ 
@@ -101,7 +90,6 @@
         {
                 return $this->username;
         }
-
         /**
          * Set the value of username
          *
@@ -110,19 +98,39 @@
         public function setUsername($username)
         {
                 $this->username = $username;
-
                 return $this;
         }
 
+        /**
+         * Get the value of bio
+         */ 
+        public function getBio()
+        {
+                return $this->bio;
+        }
+
+        /**
+         * Set the value of bio
+         *
+         * @return  self
+         */ 
+        public function setBio($bio)
+        {
+                $this->bio = $bio;
+
+                return $this;
+        }
+        
         // Registers a user into the database  @return true if successful @return false if unsuccessful
         public function register() {
             // connectie
             $conn = Db::getInstance();
-
             // query (sql injectie!!!)
+
+            
             $statement = $conn->prepare("insert into users
-                                         (email, password, firstname, lastname, username)
-                                         values (:email, :password, :firstname, :lastname, :username)
+                                         (email, password, firstname, lastname, username, bio)
+                                         values (:email, :password, :firstname, :lastname, :username, :bio)
                                         ");
             
             $hash = password_hash($this->password, PASSWORD_BCRYPT);
@@ -130,13 +138,12 @@
             $statement->bindParam(":firstname", $this->firstname);
             $statement->bindParam(":lastname", $this->lastname);
             $statement->bindParam(":username", $this->username);
+            $statement->bindParam(":bio", $this->bio);
             $statement->bindParam(":password", $hash);
-
             // execute
             $result = $statement->execute();
             return $result;
         }
-
         // Create a user session, redirect to the index page
         public function login() {
             if(!isset($_SESSION)) { 
@@ -145,7 +152,6 @@
             $_SESSION['email'] = $this->email;
             header('Location: index.php');
         }
-
         // Check if a user is logged in. If not, redirect to login
         public static function checkLogin(){
             if(!isset($_SESSION)) { 
@@ -155,16 +161,16 @@
                 header('Location: login.php');
             }
         }
-
         // Find a user based on email addres
         public static function findByEmail($email){
             $conn = Db::getInstance();
-            $statement = $conn->prepare("select * from users where email = :email limit 1");
+            $statement = $conn->prepare("select * 
+                                        from users 
+                                        where email = :email limit 1");
             $statement->bindValue(":email", $email);
             $statement->execute();
             return $statement->fetch(PDO::FETCH_ASSOC);
         }
-
         // Check if a user exists based on a give email address */
         public static function isAccountAvailable($email){
             $u = self::findByEmail($email);
@@ -176,24 +182,24 @@
                 return false;
             }
         }
-
-        // Change profile settings
+        // Registers a user into the database  @return true if successful @return false if unsuccessful
         public function changeSettings() {
             // connectie
             $conn = Db::getInstance();
             // query (sql injectie!!!)
-            $statement = $conn->prepare("update users set username = :username, firstname = :firstname, lastname = :lastname, email = :email, password = :password");
+
+            
+            $statement = $conn->prepare("update users
+                                        set bio = :bio, password = :password
+                                        where email = :email
+                                        ");
             
             $hash = password_hash($this->password, PASSWORD_BCRYPT);
             $statement->bindParam(":email", $this->email);
-            $statement->bindParam(":firstname", $this->firstname);
-            $statement->bindParam(":lastname", $this->lastname);
-            $statement->bindParam(":username", $this->username);
+            $statement->bindParam(":bio", $this->bio);
             $statement->bindParam(":password", $hash);
-
             // execute
             $result = $statement->execute();
             return $result;
-
         }
     }

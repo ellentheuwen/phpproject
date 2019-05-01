@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet"></head>
 <body>
   
-  <div id="netflix">
+  <div id="talktype">
   <?php include_once("nav.inc.php"); ?>
   
   <div class="feed">

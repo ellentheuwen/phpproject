@@ -14,7 +14,7 @@
 			$username = htmlspecialchars($_POST['username']);
 			$firstname= htmlspecialchars($_POST['firstname']);
 			$lastname= htmlspecialchars($_POST['lastname']);
-
+			$bio= htmlspecialchars($_POST['bio']);
 
     		$password = $_POST['password'];
 
@@ -25,11 +25,14 @@
 				$user->setPassword($password);
 				$user->setFirstname($firstname);
 				$user->setLastname($lastname);
+				$user->setBio($bio);
+
 
 				if( $user->register() ) {
 					$user->login();
 				}
 			}
+			
 			else {
 				$error = "We can't register in with that password. Can you try again?";
 			}
@@ -74,6 +77,10 @@
 
 				<div class="form__field">
 					<input type="text" id="lastname" name="lastname" placeholder="And your lastname" class="inputField">
+				</div>
+
+				<div class="form__field">
+					<input value="" type="text" id="bio" name="bio" placeholder="Tell something about you in your bio" class="inputField">
 				</div>
 
 				<div class="form__field">

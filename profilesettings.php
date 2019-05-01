@@ -11,20 +11,15 @@
 			
 			
 			$email = htmlspecialchars($_POST['email']);
-			$username = htmlspecialchars($_POST['username']);
-			$firstname= htmlspecialchars($_POST['firstname']);
-			$lastname= htmlspecialchars($_POST['lastname']);
-
+			$bio= htmlspecialchars($_POST['bio']);
 
     		$password = $_POST['password'];
 
             if( $security->passwordsAreSecure() ){
 				$user = new User();        
 				$user->setEmail($email);
-				$user->setUsername($username);
 				$user->setPassword($password);
-				$user->setFirstname($firstname);
-				$user->setLastname($lastname);
+				$user->setBio($bio);
 
 				if( $user->changeSettings() ) {
 					$user->login();
@@ -65,19 +60,7 @@
                 <?php endif; ?>
 
 				<div class="form__field">
-					<input type="text" id="username" name="username" placeholder="New username" class="inputField">
-				</div>
-
-				<div class="form__field">
-					<input type="text" id="firstname" name="firstname" placeholder="Change firstname" class="inputField">
-				</div>
-
-				<div class="form__field">
-					<input type="text" id="lastname" name="lastname" placeholder="Another lastname" class="inputField">
-				</div>
-
-				<div class="form__field">
-					<input value="" type="text" id="email" name="email" placeholder="Update your e-mail?" class="inputField">
+					<input type="text" id="bio" name="bio" placeholder="Type a bio right here" class="inputField">
 				</div>
 
 				<div class="form__field">
@@ -86,6 +69,10 @@
 
                 <div class="form__field">
 					<input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm your password" class="inputField">
+				</div>
+
+				<div class="form__field">
+					<input value="" type="text" id="email" name="email" placeholder="Verify by telling your email" class="inputField">
 				</div>
 
 				<div class="form__field">
