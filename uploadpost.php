@@ -1,8 +1,38 @@
 ------ hier komt uw php nog. die is basically hetzelfde als bij het registeren enzo, maar dan met andere termen. (zie databank)
 + invoerveld voor een bestand te kiezen moet ook nog komen. good luck! 
---- een class voor items is er wel al deels :) 
+--- een class voor items is er wel al deels :)
 
-<!DOCTYPE html>
+<?php
+	include_once("classes/Item.class.php");
+
+	if (isset($_POST['submit'])) {
+		//$file = $_POST['file'];
+		$fileDescription = $_POST['description'];
+		$fileHashtags = $_POST['hashtags'];
+		$fileLocation = $_POST['location'];
+
+		$item = new Item();
+		$item->setDescription($fileDescription);
+		//$item->setPicture($file);
+		$item->setHashtags($fileHashtags);
+		$item->setLocation($fileLocation);
+
+
+		// plaats om de images op te slaan
+		// $target = "images/".basename($_FILES['image']['name']);
+
+		
+
+
+
+		
+		
+	}
+
+
+
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -16,7 +46,7 @@
 	<div class="talktypeUpload">
 
 		<div class="form form--upload">
-			<form action="" method="post">
+			<form action="" method="post" enctype="multipart/form-data">
 			<h2 class="form__title">Let's Talk Type —— Upload </h2>
 
                 <?php if(isset($error)): ?>
@@ -25,7 +55,11 @@
 						💩 <?php echo $error; ?>
 					</p>
 				</div>
-                <?php endif; ?>
+								<?php endif; ?>
+								
+				<div class="form__field">
+					<input type="file" id="file" name="file" class="inputField">
+				</div>				
 
 				<div class="form__field">
 					<input type="text" id="description" name="description" placeholder="Add an description to your image" class="inputField">
@@ -40,7 +74,7 @@
 				</div>
 
 				<div class="form__field">
-					<input type="submit" value="Upload!" class="btn btn--primary">	
+					<input type="submit" value="Upload!" class="btn btn--primary" name="submit">	
 				</div>
 
                 <p id="gotAccount">Back to the <a href="index.php">homepage</a></p>
