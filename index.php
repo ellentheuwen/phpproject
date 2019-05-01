@@ -26,8 +26,9 @@
     </a>
     <?php endforeach; ?>
   </div>
-  
 </div>
+
+<button id="load--more">Load More</button>
 
 </body>
 </html>

@@ -12,15 +12,12 @@
 			
 			$email = htmlspecialchars($_POST['email']);
 			$bio= htmlspecialchars($_POST['bio']);
-
     		$password = $_POST['password'];
-
             if( $security->passwordsAreSecure() ){
 				$user = new User();        
 				$user->setEmail($email);
 				$user->setPassword($password);
 				$user->setBio($bio);
-
 				if( $user->changeSettings() ) {
 					$user->login();
 				}
@@ -32,7 +29,6 @@
         catch(Exception $e) {
 			$error = $e->getMessage();
         }
-
     }
 ?><!DOCTYPE html>
 <html lang="en">
