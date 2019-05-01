@@ -60,6 +60,11 @@
                 <?php endif; ?>
 
 				<div class="form__field">
+				<input type="file" name="file" id="img" style="display:none;"/>
+					<label for="img" style= "text-align:center; color: #E7A06E;">Click me to choose an avatar</label>				
+				</div>				
+
+				<div class="form__field">
 					<input type="text" id="bio" name="bio" placeholder="Type a bio right here" class="inputField">
 				</div>
 

@@ -1,7 +1,3 @@
------- hier komt uw php nog. die is basically hetzelfde als bij het registeren enzo, maar dan met andere termen. (zie databank)
-+ invoerveld voor een bestand te kiezen moet ook nog komen. good luck! 
---- een class voor items is er wel al deels :)
-
 <?php
 	include_once("classes/Item.class.php");
 
@@ -58,9 +54,10 @@
 								<?php endif; ?>
 								
 				<div class="form__field">
-					<input type="file" id="file" name="file" class="inputField">
-				</div>				
-
+						<input type="file" name="file" id="file" style="display:none;"/>
+						<label for="img" style= "text-align:center; color: #E7A06E;">Click me to choose a post</label>				
+				</div>		
+				
 				<div class="form__field">
 					<input type="text" id="description" name="description" placeholder="Add an description to your image" class="inputField">
 				</div>
