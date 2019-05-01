@@ -13,7 +13,7 @@
             include_once("settings/db.php");
             
             if( self::$conn == null ){
-                self::$conn = new PDO('mysql:host='.$db['host'].';dbname=talktype', $db['username'], $db['password']);
+                self::$conn = new PDO("mysql:host=localhost;port=8889;dbname=talktype", "root", "root", null);
                 // echo "💩";
                 return self::$conn;
                 

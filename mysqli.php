@@ -1,5 +1,5 @@
 <?php
-    $conn = new mysqli("localhost", "root", "root", "openbeers");
+    $conn = new mysqli("localhost", "root", "root", "talktype", 8889);
     if( $conn->connect_errno ) {
         die("Database is gone.");
     }
