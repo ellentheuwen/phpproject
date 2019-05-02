@@ -1,16 +1,16 @@
 <?php
-include_once("bootstrap.php");
+include_once 'bootstrap.php';
 $conn = Db::getInstance();
 
 // Voor de username te fixen bij 'log uit'
-$stm = $conn-> prepare ("SELECT id FROM users WHERE email = '".$_SESSION['email']."'");
-$stm->execute();
-$id=$stm->fetch(PDO::FETCH_COLUMN);
-
-$statement = $conn->prepare("SELECT username FROM users WHERE users.id=:id");
-$statement->bindValue(":id", $id); 
+$statement = $conn->prepare("SELECT id FROM users WHERE email = '".$_SESSION['email']."'");
 $statement->execute();
-$username=$statement->fetch(PDO::FETCH_COLUMN);
+$id = $statement->fetch(PDO::FETCH_COLUMN);
+
+$statement = $conn->prepare('SELECT username FROM users WHERE users.id=:id');
+$statement->bindValue(':id', $id);
+$statement->execute();
+$username = $statement->fetch(PDO::FETCH_COLUMN);
 
 ?>
 
@@ -19,8 +19,10 @@ $username=$statement->fetch(PDO::FETCH_COLUMN);
 
     <a href="uploadpost.php">Upload some cool type</a>
     
-    <form action="" method="get">
-      <input type="text" name="search" placeholder="search">
+    <form action="search.php" method="GET">
+      <input type="text" name="search">
+       <input type="submit" value="Search" />
+
     </form>
 
     <a href="#">Profile</a>
