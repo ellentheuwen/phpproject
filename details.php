@@ -14,6 +14,8 @@
   <meta charset="UTF-8">
   <title>IMDFlix</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet"></head>
 </head>
 <body>
   
