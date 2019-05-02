@@ -2,10 +2,11 @@
     include_once('Db.class.php');
 
     class Item {
-        private $description;
-        private $picture;
-        private $hashtags;
-        private $location;
+        private $fileDescription;
+        private $filePicture;
+        private $fileHashtags;
+        private $fileLocation;
+        private $db;
 
         /**
          * Get the value of description
@@ -20,13 +21,13 @@
          *
          * @return  self
          */ 
-        public function setDescription($description)
+        public function setDescription($fileDescription)
         {
-            if ( empty($description)) {
+            if ( empty($fileDescription)) {
                 throw new Exception("Description cannot be empty, please enter a description.");
             }
 
-                $this->description = $description;
+                $this->description = $fileDescription;
 
                 return $this;
         }
@@ -44,9 +45,9 @@
          *
          * @return  self
          */ 
-        public function setPicture($picture)
+        public function setPicture($filePicture)
         {
-                $this->picture = $picture;
+                $this->picture = $filePicture;
 
                 return $this;
         }
@@ -86,9 +87,9 @@
          *
          * @return  self
          */ 
-        public function setHashtags($hashtags)
+        public function setHashtags($fileHashtags)
         {
-                $this->hashtags = $hashtags;
+                $this->hashtags = $fileHashtags;
 
                 return $this;
         }
@@ -106,22 +107,22 @@
          *
          * @return  self
          */ 
-        public function setLocation($location)
+        public function setLocation($fileLocation)
         {
-                $this->location = $location;
+                $this->location = $fileLocation;
 
                 return $this;
         }
-
-        
+    
+    // Upload an image into the database    
     public function upload() {    
 
         // connectie 
         $conn = Db::getInstance();
 
-        // sql injectie
-        $statement = $conn->prepare("insert into posts (description, picture, hashtags, location) values (:description, :picture, :hashtags, :location");
-
+        // query ( sql injectie )
+        $statement = $conn->prepare("INSERT INTO posts (description, picture, hashtags, location) 
+        VALUES (:description, :picture, :hashtags, :location)");
         $statement->bindParam(":description", $this->description);
         $statement->bindParam(":picture", $this->picture);
         $statement->bindParam(":hashtags", $this->hashtags);
@@ -130,6 +131,8 @@
         // execute
         $result = $statement->execute();
         return $result;
+
+        
 
         }
     }

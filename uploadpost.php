@@ -1,30 +1,33 @@
 <?php
 	include_once("classes/Item.class.php");
+	
+
+	try {
+
 
 	if (isset($_POST['submit'])) {
-		//$file = $_POST['file'];
+		
 		$fileDescription = $_POST['description'];
+		$filePicture = addslashes(file_get_contents($_FILES['file']['tmp_name']));
 		$fileHashtags = $_POST['hashtags'];
 		$fileLocation = $_POST['location'];
 
+		
 		$item = new Item();
 		$item->setDescription($fileDescription);
-		//$item->setPicture($file);
+		$item->setPicture($filePicture);
 		$item->setHashtags($fileHashtags);
 		$item->setLocation($fileLocation);
 
+		$item->upload();
 
-		// plaats om de images op te slaan
-		// $target = "images/".basename($_FILES['image']['name']);
-
-		
-
-
-
-		
+	
 		
 	}
-
+} 
+catch(Exception $e) {
+	$error = $e->getMessage();
+}
 
 
 
