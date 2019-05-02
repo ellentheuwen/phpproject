@@ -7,4 +7,3 @@ Ellen Theuwen, Micheline Van Looveren, Lowie Aelbrecht
 
 ## Coding standards
 
-jow
