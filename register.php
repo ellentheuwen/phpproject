@@ -1,46 +1,39 @@
 <?php
-    include_once("classes/User.class.php");
-    include_once("helpers/Security.class.php");
-    
-    if( !empty($_POST) ){
-        try
-        {
+    include_once 'classes/User.class.php';
+    include_once 'helpers/Security.class.php';
+
+    if (!empty($_POST)) {
+        try {
             $security = new Security();
             $security->password = $_POST['password'];
             $security->passwordConfirmation = $_POST['password_confirmation'];
-			
-			
-			$email = htmlspecialchars($_POST['email']);
-			$username = htmlspecialchars($_POST['username']);
-			$firstname= htmlspecialchars($_POST['firstname']);
-			$lastname= htmlspecialchars($_POST['lastname']);
-			$bio= htmlspecialchars($_POST['bio']);
 
-    		$password = $_POST['password'];
+            $email = htmlspecialchars($_POST['email']);
+            $username = htmlspecialchars($_POST['username']);
+            $firstname = htmlspecialchars($_POST['firstname']);
+            $lastname = htmlspecialchars($_POST['lastname']);
+            $bio = htmlspecialchars($_POST['bio']);
 
-            if( $security->passwordsAreSecure() ){
-				$user = new User();        
-				$user->setEmail($email);
-				$user->setUsername($username);
-				$user->setPassword($password);
-				$user->setFirstname($firstname);
-				$user->setLastname($lastname);
-				$user->setBio($bio);
+            $password = $_POST['password'];
 
+            if ($security->passwordsAreSecure()) {
+                $user = new User();
+                $user->setEmail($email);
+                $user->setUsername($username);
+                $user->setPassword($password);
+                $user->setFirstname($firstname);
+                $user->setLastname($lastname);
+                $user->setBio($bio);
 
-				if( $user->register() ) {
-					$user->login();
-				}
-			}
-			
-			else {
-				$error = "We can't register in with that password. Can you try again?";
-			}
+                if ($user->register()) {
+                    $user->login();
+                }
+            } else {
+                $error = "We can't register in with that password. Can you try again?";
+            }
+        } catch (Exception $e) {
+            $error = $e->getMessage();
         }
-        catch(Exception $e) {
-			$error = $e->getMessage();
-        }
-
     }
 ?><!DOCTYPE html>
 <html lang="en">
@@ -59,7 +52,7 @@
 			<form action="" method="post">
 				<h2 class="form__title">Let's Talk Type —— Register </h2>
 
-                <?php if(isset($error)): ?>
+                <?php if (isset($error)): ?>
 				<div class="form__error">
 					<p>
 						💩 <?php echo $error; ?>
