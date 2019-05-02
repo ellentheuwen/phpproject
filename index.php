@@ -27,7 +27,6 @@
     <div class="info_posts"> 
         <p class="postinfo"><?php echo $p['location']; ?></p> 
         <p class="postinfo"><?php echo $p['description']; ?> <?php echo $p['hashtags']; ?></p>
-        <p class="postinfo">Total likes: <?php echo $p['likes']; ?></p>
 <?php endforeach; ?>
 
     </div>

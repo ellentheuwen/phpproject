@@ -1,35 +1,24 @@
 <?php
-	include_once("classes/Item.class.php");
-	
+    include_once 'classes/Item.class.php';
 
-	try {
+    try {
+        if (isset($_POST['submit'])) {
+            $fileDescription = $_POST['description'];
+            $filePicture = addslashes(file_get_contents($_FILES['file']['tmp_name']));
+            $fileHashtags = $_POST['hashtags'];
+            $fileLocation = $_POST['location'];
 
+            $item = new Item();
+            $item->setDescription($fileDescription);
+            $item->setPicture($filePicture);
+            $item->setHashtags($fileHashtags);
+            $item->setLocation($fileLocation);
 
-	if (isset($_POST['submit'])) {
-		
-		$fileDescription = $_POST['description'];
-		$filePicture = addslashes(file_get_contents($_FILES['file']['tmp_name']));
-		$fileHashtags = $_POST['hashtags'];
-		$fileLocation = $_POST['location'];
-
-		
-		$item = new Item();
-		$item->setDescription($fileDescription);
-		$item->setPicture($filePicture);
-		$item->setHashtags($fileHashtags);
-		$item->setLocation($fileLocation);
-
-		$item->upload();
-
-	
-		
-	}
-} 
-catch(Exception $e) {
-	$error = $e->getMessage();
-}
-
-
+            $item->upload();
+        }
+    } catch (Exception $e) {
+        $error = $e->getMessage();
+    }
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -48,7 +37,7 @@ catch(Exception $e) {
 			<form action="" method="post" enctype="multipart/form-data">
 			<h2 class="form__title">Let's Talk Type —— Upload </h2>
 
-			<?php if(isset($error)): ?>
+			<?php if (isset($error)): ?>
 				<div class="form__error">
 					<p>
 						💩 <?php echo $error; ?>

@@ -19,9 +19,9 @@ $username = $statement->fetch(PDO::FETCH_COLUMN);
 
     <a href="uploadpost.php">Upload some cool type</a>
     
-    <form action="search.php" method="GET">
+    <form action="" method="GET">
       <input type="text" name="search">
-       <input type="submit" value="Search" />
+       <input type="submit" value="Search">
 
     </form>
 

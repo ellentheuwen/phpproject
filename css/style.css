@@ -286,3 +286,11 @@ a.navbar__logout {
 	position: fixed;
 	bottom: 0;
 }
+
+.info_posts {
+margin-bottom: 6em;
+}
+
+.postinfo {
+	margin-left: 10em;
+}

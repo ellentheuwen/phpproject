@@ -1,24 +1,23 @@
 <?php
-	include_once("functions.inc.php");
-	
-	// get user and password from POST
-	if( !empty($_POST) ) {
-		$email = $_POST['email'];
-		$password = $_POST['password'];
+    include_once 'functions.inc.php';
 
-		// check if user can login (use function)
-		if( canILogin($email, $password) ) {
-			session_start();
-			$_SESSION['email'] = $email;
+    // get user and password from POST
+    if (!empty($_POST)) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-			// if ok -> redirect to index.php
-			header('Location: index.php');
-		}
-		else {
-			$error = "Login failed";
-		}
-	} 
-	
+        // check if user can login (use function)
+        if (canILogin($email, $password)) {
+            session_start();
+            $_SESSION['email'] = $email;
+
+            // if ok -> redirect to index.php
+            header('Location: index.php');
+        } else {
+            $error = 'Login failed';
+        }
+    }
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +34,7 @@
 			<form action="" method="post">
 			<h2 class="form__title">Let's Talk Type —— Log in </h2>
 
-				<?php if( isset($error) ): ?>
+				<?php if (isset($error)): ?>
 				<div class="form__error">
 					<p>
 						Sorry, have you written a typo maybe? Try again to log in.
