@@ -27,6 +27,9 @@ body {
 }
 
 .navbar {
+	width: 100vw;
+	position: fixed;
+	top: 0;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -40,7 +43,7 @@ body {
     font-size: 0.8em;
     text-decoration: none;
     display: inline-block;
-    margin-right: 4em;
+    margin-right: 3em;
     margin-top: 1em;
 }
 
@@ -50,7 +53,8 @@ a.navbar__logout {
 }
 
 #logo {
-    margin-left: 2em;
+	margin-left: 2em;
+	margin-right:  4em;
     font-family: 'Staatliches', cursive;
 	font-size: 1.6em;
 	margin-bottom: 12px;
@@ -75,19 +79,21 @@ a.navbar__logout {
 }
 
 .feed {
-	margin-top: 0.2em;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-	grid-gap: 1em;
-	padding: 2em;
-
+	margin-left: 2em;
+	margin-top: 12em;
 }
 
 .feed__posts {
 	background-size: cover;
-	height: 200px;
+	height: 500px;
 	background-position: center center;
-	max-width: 300px;
+	max-width: 500px;
+	margin: 2em;
+	margin-left: 10em;
+}
+
+.post_description {
+	margin-top: 13em;
 }
 
 .talktypeLogin {
@@ -266,4 +272,17 @@ a.navbar__logout {
 	border: none;
 	padding: 0.3em 2em;
 	font-size: 1.4em;
+}
+
+.load_more {
+	font-family: 'Staatliches', cursive;
+	background-color:  #CBD3D8;
+	color: white;
+	text-align: center;
+	border: none;
+	padding: 0.3em 2em;
+	font-size: 1.4em;
+	width: 100vw;
+	position: fixed;
+	bottom: 0;
 }
