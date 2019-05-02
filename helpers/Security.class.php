@@ -46,4 +46,7 @@
         }
 
         // CHECK IF USERNAME IS ALREADY TAKEN?!
+        private function usernameTaken()
+        {
+        }
     }
