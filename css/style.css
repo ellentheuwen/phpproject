@@ -1,0 +1,478 @@
+/* HI, WANT TO CHANGE SOMETHING IN CSS? 
+THESE ARE THE COMMON COLORS & FONTS
+
+Normal font: 'Overpass', sans-serif;
+Capitals: 'Staatliches', cursive;
+
+Yellow: #E2BD6B;
+Green: #BAC7BA;
+Orange: #E7A06E;
+Dark blue: #1C3B6D;
+Light blue: #CBD3D8;
+Light grey: #E5DEDE;
+Dark grey: #999999;
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  font-family: 'Overpass', sans-serif;
+  margin: 0;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  font-size: 0;
+  visibility: hidden;
+  height: 0;
+}
+
+.clearfix {
+  margin-left: 100px;
+}
+
+/* 
+REGISTER EN LOGIN 
+*/
+
+.talktypeRegister {
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/register.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.talktypeLogin {
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/login.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form--login {
+  background-color: #F3F3F3;
+  padding: 1em;
+  color: #505050;
+  grid-column: form;
+  grid-row: form;
+  border-radius: 30px;
+  box-shadow: 0 0px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1);
+  margin-top: -7em;
+  margin-left: 46em;
+}
+
+#username_error {
+  color: #E7A06E;
+  margin-left: 1.5em;
+}
+
+.form__error {
+  background-color: #999999;
+  color: white;
+  font-weight: lighter;
+  padding: 0.3em 1em;
+  margin-bottom: 1em;
+  font-size: 0.9em;
+}
+
+.form__title {
+  font-size: 20px;
+  text-align: center;
+}
+
+.form__field {
+  padding-bottom: 1em;
+}
+
+.form__field label {
+  display: block;
+  margin-bottom: 0.2em;
+}
+
+.form__field .label__inline {
+  display: inline-block;
+}
+
+.form__field input[type=text],
+.form__field input[type=password] {
+  width: 100%;
+  padding: 0.3em;
+  font-size: 1.4em;
+}
+
+.form--login {
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 560px;
+  display: block;
+  background: #ffff;
+}
+
+.form input::placeholder {
+  font-family: 'Overpass', sans-serif;
+  color: #E5DEDE;
+  margin-bottom: 5px;
+  font-size: 10px;
+}
+
+.form textarea::placeholder {
+  font-family: 'Overpass', sans-serif;
+  color: #E5DEDE;
+  margin-bottom: 5px;
+}
+
+.form__field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  width: 100%;
+  height: 80px;
+  position: relative;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+.form__field input {
+  font-family: 'Overpass', sans-serif;
+  display: block;
+  width: 70%;
+  background: transparent;
+  font-size: 10px;
+  color: #E5DEDE;
+  line-height: 1.2;
+  margin-left: 24px;
+  margin-bottom: 10px;
+  border-bottom: solid #BAC7BA 2px;
+}
+
+.form__checkbox label {
+  font-size: 13px;
+  color: #999999;
+  line-height: 1.4;
+  position: relative;
+  cursor: pointer;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  -ms-align-items: center;
+  align-items: center;
+  font-size: 13px;
+}
+
+.form__btn {
+  font-family: 'Staatliches', cursive;
+  background-color: #E2BD6B;
+  color: white;
+  text-align: center;
+  border: none;
+  padding: 0.3em 2em;
+  font-size: 1.4em;
+  width: 100%;
+}
+
+.form__btn input {
+  font-family: 'Staatliches', cursive;
+  background: none;
+  color: #ffff;
+  font-size: 18px;
+}
+
+#gotAccount {
+  text-align: center;
+}
+
+#getAccount {
+  text-align: center;
+}
+
+/* 
+INDEX 
+*/
+
+.searchform {
+  margin-top: 200px;
+  margin-left: 130px;
+  margin-bottom: 100px;
+}
+
+.collection__itemform {
+  border: 2px solid #CBD3D8;
+  margin: 5px;
+  padding: 5px;
+  width: 576px;
+}
+
+.feedtitle {
+  margin-top: 90px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-bottom: white solid 7px;
+  font-family: 'Overpass', sans-serif;
+  color: white;
+  font-size: 16px;
+}
+
+.collection {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+  padding: 5px;
+}
+
+.collection__item {
+  border: 2px solid #CBD3D8;
+  margin: 5px;
+  padding: 5px;
+}
+
+.item--container {
+  display: flex;
+  justify-content: space-around;
+
+  padding: 20px;
+}
+
+.descriptiontitle {
+  color: #E2BD6B;
+  font-family: 'Staatliches', cursive;
+  font-size: 20px;
+  border-bottom: 2px solid #E2BD6B;
+  margin-left: 20px;
+  margin-right: 15px;
+}
+
+/* 
+DETAIL PAGINA
+*/
+
+.collection__detail {
+  margin: 6.25em 0 0 2em;
+}
+
+.collection__detail img {
+  width: 50%;
+
+}
+
+.color {
+  float: left;
+  margin-left: 30px;
+  padding-top: 10px;
+}
+
+.color p {
+  font-size: 0.7em;
+  text-align: center;
+}
+
+.bol {
+  list-style: none;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  margin: 0 10px;
+  cursor: pointer;
+  transition-duration: .2s;
+  border: 1px solid #E5DEDE;
+}
+
+#comment {
+  background-color: #CBD3D8;
+  padding: 1em;
+  border: 1px solid white;
+  width: 450px;
+  margin-left: 60px;
+}
+
+#listupdates {
+  padding: 5px;
+  width: 200px;
+  list-style: none;
+  margin-left: 55px;
+}
+
+.formComment {
+  margin-top: 20px;
+  margin-left: 110px;
+}
+
+.formComment__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 160px;
+  background-color: white;
+  color: #E2BD6B;
+  font-family: 'Staatliches', cursive;
+  font-size: 20px;
+  border-bottom: 2px solid #E2BD6B;
+  margin-bottom: 20px;
+}
+
+.formComment__input {
+  display: block;
+  width: 100px;
+  background: transparent;
+  font-size: 18px;
+  color: #555555;
+  line-height: 1.2;
+  margin-left: 24px;
+  margin-bottom: 10px;
+  border-bottom: solid #709255 1px;
+}
+
+.input {
+  margin-top: 20px;
+  margin-left: 90px;
+  background-color: white;
+  color: #E2BD6B;
+  font-family: 'Staatliches', cursive;
+  font-size: 20px;
+    border-bottom: 2px solid #E2BD6B;
+}
+
+/* 
+NAV 
+*/
+
+.navbar {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5em;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+  background-image: url('../images/nav3.svg');
+}
+
+.navbar a {
+  color: #E7A06E;
+  font-size: 0.8em;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 3em;
+  margin-top: 1em;
+}
+
+a.navbar__logout {
+  margin-left: 2em;
+  margin-right: 3em;
+}
+
+.navbar .logo {
+  margin-left: 2em;
+  margin-right: 4em;
+  font-family: 'Staatliches', cursive;
+  font-size: 1.6em;
+  margin-bottom: 12px;
+  color: #E7A06E;
+}
+
+.navbar form {
+  flex: 1 1 30%;
+  align-self: flex-end;
+  text-align: right;
+  margin-right: 200px;
+  margin-bottom: 50px;
+}
+
+.navbar input {
+  width: 100%;
+  max-width: 200px;
+  background-color: #CBD3D8;
+  color: white;
+  padding: 0.5em;
+  border: 1px solid white;
+}
+
+.upload {
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100vw;
+  padding: 10px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.upload h3 {
+  text-align: center;
+  color: #E5DEDE;
+}
+
+.upload input:last-child {
+  color: white;
+  background-color: #1C3B6D;
+  border: none;
+  padding: 10px;
+  width: 300px;
+  margin-top: 10px;
+  border: 1px solid #E7A06E;
+}
+
+/* 
+LOAD MORE 
+*/
+
+#load--more {
+  font-family: 'Staatliches', cursive;
+  background-color: #CBD3D8;
+  color: white;
+  text-align: center;
+  border: none;
+  padding: 0.3em 2em;
+  font-size: 1.4em;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+}
+
+.uploaddescription {
+  background-color: #CBD3D8;
+  padding: 1em;
+  border: 1px solid white;
+  width: 300px;
+}
+
+/* 
+PROFIEL 
+*/
+
+.profile {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.profile--image {
+  display: inline;
+  margin: 0 auto;
+  max-height: 100%;
+}
