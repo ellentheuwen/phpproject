@@ -4,5 +4,3 @@ Saw a nice font on the street? Post it! Got an email with a typo in it? Share it
 
 ## Contributor
 Ellen Theuwen
-
-## Features

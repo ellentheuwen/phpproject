@@ -67,6 +67,7 @@ Zo krijg ik een status als bijvoorbeeld 'een dag geleden'.
 --
 FEATURE 14: Kleuren detecteren
 --
+
 http://bookofzeus.com/articles/php/get-the-color-palette-for-an-image-using-php/?fbclid=IwAR20nzqOpL_59UUqlXfsTBq5iU2fptgoxb2_qhhaQmc9Ep6it7TiwFp1Lfk
 Behoort tot php zelf.  " PHP GD library ".
 Dan is het enkel nog een kwestie van een vakje te maken met die kleur in als background-color om het duidelijkte maken.
@@ -78,4 +79,3 @@ Daarvoor had ik een search nodig, maar die heb ik helaas ook niet.
 FEATURE 15: UX uploadscherm
 --
 /
-
