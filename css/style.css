@@ -208,6 +208,8 @@ INDEX
 */
 
 .searchform {
+  font-family: 'Overpass', sans-serif;
+  font-size: 11px;
   margin-top: 200px;
   margin-left: 130px;
   margin-bottom: 100px;
@@ -409,6 +411,7 @@ a.navbar__logout {
   text-align: right;
   margin-right: 200px;
   margin-bottom: 50px;
+  font-size: 0.6em
 }
 
 .navbar input {
@@ -467,6 +470,11 @@ LOAD MORE
   width: 300px;
 }
 
+.uploaddescription::placeholder{
+ font-family: 'Overpass', sans-serif;
+ font-size: 11px;
+}
+
 /* 
 PROFIEL 
 */
@@ -474,13 +482,11 @@ PROFIEL
 .profile {
   width: 100px;
   height: 100px;
-  position: relative;
   overflow: hidden;
-  border-radius: 50%;
   text-align: center;
   align-content: center;
   align-items: center;
-  background-color: black;
+  border: 1px solid #999999;
 }
 
 .profile--image {

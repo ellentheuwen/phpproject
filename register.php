@@ -91,7 +91,7 @@ $("#username").on("keyup", function (e) {
 	var name = $("#username").val();
 	$.ajax({
 	    method: "POST",
-		url: "ajax/usernameval.php",
+		url: "ajax/usernameavailable.php",
 		data: {name: name},
 		dataType: 'json'
 		})

@@ -34,7 +34,7 @@ User::checkLogin();
 
   <form enctype="multipart/form-data" action="upload.php" method="POST" class="searchform"> 
     <input type="file" name="image" id="img" style="display:none;"/>
-	  <label for="img" style= "text-align:center; color: #E7A06E;">Click me to choose what you'd like to post</label>	<br>		
+	  <label for="img" style= "text-align:center; color: #E7A06E; font-size: 16px;">Click me to choose what you'd like to post</label>	<br>		
     <br><textarea name="description" class= "uploaddescription" rows="2" placeholder="Let's write down a description for your post" required></textarea><br>
     <input type="submit" value="Let's upload" name="upload" class="input"/>  
   </form>     

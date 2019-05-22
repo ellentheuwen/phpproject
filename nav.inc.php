@@ -9,12 +9,12 @@ $avatar = User::avatar();
    
   <a href="index.php" class="logo">Let's <br>Talk <br>Type</a>
     
-  <form action="search.php" method="get">
+  <form action="" method="get">
     <input type="text" name="search"  placeholder="Search">
      <input type="submit" value="Let's go">
   </form>
 
-  <a href="settings.php">Settings</a>
+  <a href="#">Settings</a>
 
   <a href="#">|</a>
 

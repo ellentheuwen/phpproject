@@ -94,7 +94,7 @@ $posts = Post::detailPagina();
 
 		$.ajax({
   			method: "POST",
-  			url: "ajax/postcomment.php",
+  			url: "ajax/comment.php",
   			data: { text: text, post_id: $id},
 			dataType: 'json'
 		})
