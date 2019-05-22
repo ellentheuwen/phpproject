@@ -75,26 +75,13 @@ class Post
         $id = $_GET['id'];
         $conn = Db::getInstance();
 
-        $statement = $conn->prepare("SELECT * FROM posts where id = $id");
+        $statement = $conn->prepare("SELECT * 
+                                    FROM posts 
+                                    where id = $id");
         $statement->execute();
         $collection = $statement->fetchAll();
 
         return $collection;
-    }
-
-    public static function profilePic()
-    {
-        $id = $_GET['id'];
-        $conn = Db::getInstance();
-
-        $statement = $conn->prepare("SELECT users.avatar 
-                                    FROM posts,users 
-                                    WHERE posts.user_id = users.id 
-                                    AND posts.id = $id");
-        $statement->execute();
-        $profilePic = $statement->fetch();
-
-        return $profilePic;
     }
 
     public static function detectColors($image, $num, $level = 5)
@@ -143,7 +130,6 @@ class Post
         //var_dump($timeOfPost);
 
         $timeOfPostCode = strtotime($timeOfPost); // uit databank de tijd halen
-        //$timeOfPost = strtotime($row['time']); // uit databank de tijd halen
         $timeStatus = '';
         $seconds = $currentTime - $timeOfPostCode;
         $minutes = (int) floor($seconds / 60);
@@ -181,6 +167,8 @@ class Post
             $timeStatus = 'yesterday';
         } elseif ($days == 2 && $seconds > 1) {
             $timeStatus = 'the day before yesterday';
+        } elseif ($days == 7) {
+            $timeStatus = 'one week ago';
         } else {
             $timeStatus = date('d / m / Y', time() - $seconds);
         }

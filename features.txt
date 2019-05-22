@@ -1,0 +1,55 @@
+FEATURE 1: Registreren
+--
+
+Je kan je enkel registreren als je alle velden hebt ingevuld.
+Als er nog iets leeg blijft, gaat het niet. De gegevens die je achterlaat, worden in de classe User gestoken.
+! htmlspecialchars: voor xss attacks.
+
+Je gegevens worden opgeslagen in de databank, en je wordt doorverwezen naar de index.
+Het passwoord wordt gehasht opgeslagen. En dat twee tot de twaalfde keer.
+Veiliger als md5, want dit is iets trager. Zo heeft een hacker per minuut minder kansen om te proberen.
+md5 is ook makkelijker te kraken, via bijvoorbeeld crackstation.
+Wat laat bcrypt traag gaan? De cost. Tot de zoveelste macht wordt de hashing op de hash toegepast. Trager is beter. 
+
+
+Bindparam gaat sql injectie tegen. Geen real_escape_string meer nodig dus als je dat doet.
+Bindparam maakt de quotes onschadelijk.
+
+--
+FEATURE 2: Inloggen
+--
+
+Bij de login wordt gekeken of de ingevulde combinatie, ook zo in de databank staat.
+Als de email en het passwoord gelijk is aan een dergelijke combinatie in db,
+wordt je ingelogd. Dan krijg je een sessie mee. Dit doent om gegevens te onthouden. Zo moet je je niet elke keer opnieuw inloggen,
+binnen een bepaalde tijd. 
+
+Een sessie blijft maar geldig zolang de browser open staat.
+Alles wat je in een sessie steekt, gaat naar de server. 
+
+--
+FEATURE 4: Foto posten
+--
+
+Wanneer je iets uploadt, wordt dit bestand verwerkt naar de databank aan de hand van het pad naar de foto.
+Als een varchar, met de filenaam. Maar daarna wordt ook gelinkt in welke map het moet worden opgeslaan. 
+$newfilename = 'images/post_images/'.$_FILES['image']['name'];
+
+Je moet een description toevoegen, anders wordt er niets geupload. Deze beschrijving is ook beschermd met htmlspecialchars.
+
+
+
+
+FEATURE 9: Comments nalaten
+--
+
+FEATURE 13: Time
+--
+
+FEATURE 14: Kleuren detecteren
+--
+
+FEATURE 15: UX uploadscherm
+--
+
+
