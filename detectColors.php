@@ -2,14 +2,18 @@
 
 function detectColors($image, $num, $level = 5)
 {
-    $level = (int) $level;
-    $palette = array();
-    $size = getimagesize($image);
+    $level = (int) $level; // amount of colors
+    $palette = array(); // array for palette
+    $size = getimagesize($image); // the img
     if (!$size) {
         return false;
     }
     switch ($size['mime']) {
       case 'image/jpeg':
+      /*
+      returns an image identifier representing
+      the image obtained from the given filmename
+      */
         $img = imagecreatefromjpeg($image);
         break;
       case 'image/png':
@@ -24,6 +28,8 @@ function detectColors($image, $num, $level = 5)
     if (!$img) {
         return false;
     }
+
+    // search in height & width the 5 most common colors
     for ($i = 0; $i < $size[0]; $i += $level) {
         for ($j = 0; $j < $size[1]; $j += $level) {
             $thisColor = imagecolorat($img, $i, $j);
