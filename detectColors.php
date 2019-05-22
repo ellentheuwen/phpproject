@@ -1,4 +1,7 @@
 <?php
+/*
+FROM http://bookofzeus.com/articles/php/get-the-color-palette-for-an-image-using-php/?fbclid=IwAR20nzqOpL_59UUqlXfsTBq5iU2fptgoxb2_qhhaQmc9Ep6it7TiwFp1Lfk
+*/
 
 function detectColors($image, $num, $level = 5)
 {

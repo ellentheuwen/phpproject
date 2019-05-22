@@ -159,6 +159,11 @@ class User
         return $result->fetchAll(PDO::FETCH_CLASS, __CLASS__);
     }
 
+    /*
+    REGISTER AND
+    PUT DATA IN DB
+    */
+
     public function register()
     {
         $options = [
@@ -182,6 +187,11 @@ class User
             return false;
         }
     }
+
+    /*
+    LOGIN AND
+    GO TO INDEX
+    */
 
     public static function login()
     {

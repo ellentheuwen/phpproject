@@ -1,10 +1,9 @@
 <?php
 session_start();
 include_once 'bootstrap.php';
-User::checkLogin();
 
-  $posts = Post::getAll();
-  $post = count($posts);
+User::checkLogin();
+$posts = Post::getAll();
 
   if (!empty($posts)) {
       $show = true;
@@ -51,7 +50,7 @@ User::checkLogin();
   
 <?php endforeach; ?> 
 </div>
-
 <?php endif; ?>
+
 </body>
 </html>

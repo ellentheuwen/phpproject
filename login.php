@@ -42,7 +42,6 @@ User::login();
 					<input type="submit" name="submit" value="Let's go buddy!" >	
 				</div>
 
-
 				<div>
 					<p id="getAccount">New here? <a href="register.php">Create an account</a></p>
 				</div>

@@ -74,8 +74,6 @@ Dan is het enkel nog een kwestie van een vakje te maken met die kleur in als bac
 Op de kleur klikken om te zoeken naar foto's met diezelfde kleur, is niet gelukt.
 Daarvoor had ik een search nodig, maar die heb ik helaas ook niet.
 
-
-
 --
 FEATURE 15: UX uploadscherm
 --

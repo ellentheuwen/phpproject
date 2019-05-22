@@ -2,7 +2,6 @@
 include_once 'bootstrap.php';
 
 $username = User::username();
-$avatar = User::avatar();
 ?>
 
 <nav class="navbar">

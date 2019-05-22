@@ -1,7 +1,8 @@
 <?php
+session_start();
 include_once 'bootstrap.php';
 
-session_start();
+User::checkLogin();
 $posts = Post::detailPagina();
 
 ?><!DOCTYPE html>
@@ -79,15 +80,9 @@ $posts = Post::detailPagina();
 </div>	
 </body>
 </html>
-
-<script
-		src="https://code.jquery.com/jquery-3.3.1.min.js"
-		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-		crossorigin="anonymous">
-</script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"> </script>
 <script>
-	$("#btnSubmit").on("click",function(e){
-
+	$("#btnSubmit").on("click",function(e){ /* when clicked on this button, the next will happen */
 		var text = $("#comment").val();
 		$id = $_GET['id'];
 
@@ -107,6 +102,5 @@ $posts = Post::detailPagina();
 			});
 
 		e.preventDefault();
-
 	});
 </script>
