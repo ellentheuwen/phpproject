@@ -38,10 +38,17 @@ $newfilename = 'images/post_images/'.$_FILES['image']['name'];
 Je moet een description toevoegen, anders wordt er niets geupload. Deze beschrijving is ook beschermd met htmlspecialchars.
 
 
-
-
+--
 FEATURE 9: Comments nalaten
 --
+Werkt niet volledig. Wel met Ajax gewerkt, maar de pagina refresht toch.
+AJAX: Asynchronous JavaScript and XML.
+
+Vanaf het moment dat er op de submitknop geklikt wordt, moet er iets gebeuren zonder te refreshen.
+We halen de text uit het veld, en plaatsen deze in de lijst met comments die direct wordt aangevuld.
+
+
+
 
 FEATURE 13: Time
 --

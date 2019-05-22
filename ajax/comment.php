@@ -2,10 +2,8 @@
     require_once '../bootstrap.php';
 
     if (!empty($_POST)) {
-        // comment text uitlezen
         $text = htmlspecialchars($_POST['text']);
 
-        // comment opslaan in db
         try {
             $c = new comment();
             $c->setText($text);
@@ -23,8 +21,4 @@
         }
 
         echo json_encode($result);
-        // connectie
-        // query (insert)
-
-        // antwoord geven aan uw JS frontend (json)
     }

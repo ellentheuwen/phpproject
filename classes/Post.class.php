@@ -136,7 +136,6 @@ class Post
         $hours = (int) floor($minutes / 60);
         $days = (int) floor($hours / 24);
 
-        // hoelang geleden - tijd bepalen
         if ($seconds < 60) {
             $timeStatus = 'now';
         } elseif ($minutes == 1) {
