@@ -186,8 +186,8 @@ class User
     public static function login()
     {
         if (!empty($_POST)) {
-            $email = $_POST['email'];
-            $password = $_POST['password'];
+            $email = htmlspecialchars($_POST['email']);
+            $password = htmlspecialchars($_POST['password']);
 
             $conn = Db::getInstance();
             $statement = $conn->prepare('SELECT * 

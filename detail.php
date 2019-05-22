@@ -104,7 +104,6 @@ $posts = Post::detailPagina();
 				$("#listupdates").append(li);
 				$("#comment").val("").focus();
 				$("#listupdates li").last().slideDown();
-
 				}
 			});
 

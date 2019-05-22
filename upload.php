@@ -13,7 +13,7 @@ if (isset($_FILES['image'])) {
     $fileinfo = $finfo->file($filename);
 
     if (in_array($fileinfo, $allowedtypes)) {
-        $description = $_POST['description'];
+        $description = htmlspecialchars($_POST['description']);
         $newfilename = 'images/post_images/'.$_FILES['image']['name'];
         $statement = $conn->prepare("SELECT id FROM users WHERE email = '".$_SESSION['email']."'");
         $statement->execute();
