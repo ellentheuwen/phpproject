@@ -211,7 +211,7 @@ INDEX
   font-family: 'Overpass', sans-serif;
   font-size: 11px;
   margin-top: 200px;
-  margin-left: 130px;
+  margin-left: 80px;
   margin-bottom: 100px;
 }
 
@@ -219,7 +219,7 @@ INDEX
   border: 2px solid #CBD3D8;
   margin: 5px;
   padding: 5px;
-  width: 576px;
+  width: 464px;
 }
 
 .feedtitle {
@@ -246,10 +246,9 @@ INDEX
   padding: 5px;
 }
 
-
 .collection--image{
-  width: 564px;
-  height: 564px;
+  width: 450px;
+  height: 450px;
 }
 
 .item--container {
