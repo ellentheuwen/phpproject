@@ -37,6 +37,7 @@ $newfilename = 'images/post_images/'.$_FILES['image']['name'];
 
 Je moet een description toevoegen, anders wordt er niets geupload. Deze beschrijving is ook beschermd met htmlspecialchars.
 
+(!) veel van het internet.
 
 --
 FEATURE 9: Comments nalaten
@@ -45,13 +46,23 @@ Werkt niet volledig. Wel met Ajax gewerkt, maar de pagina refresht toch.
 AJAX: Asynchronous JavaScript and XML.
 
 Vanaf het moment dat er op de submitknop geklikt wordt, moet er iets gebeuren zonder te refreshen.
+Het klikken zelf is JavaScript, wat volgt is Ajax en Json.
 We halen de text uit het veld, en plaatsen deze in de lijst met comments die direct wordt aangevuld.
 
 
+Json:
+Dit wordt gebruikt om de data over en weer te sturen. 
+JavaScript Object Notation. Minder data, dus beter en sneller dan XML. (Extensible Markup Language, lijkt op html).
 
-
+--
 FEATURE 13: Time
 --
+
+Bij het uploaden van een foto, wordt ook de tijd & datum in de databank gestoken.
+Deze moeten we nu enkel nog vertalen naar een meer menselijke manier.
+Dat doen we door die tijd/datum te vergelijken met de tijd van nu. 
+Dan kijken we naar het verschil in seconden/minuten/dagen.
+Zo krijg ik een status als bijvoorbeeld 'een dag geleden'. 
 
 FEATURE 14: Kleuren detecteren
 --

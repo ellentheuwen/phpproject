@@ -52,7 +52,6 @@ $posts = Post::detailPagina();
             $comment->setText(htmlspecialchars(($_POST['comment'])));
             $comment->Save();
         } catch (\Throwable $th) {
-            //throw $th;
         }
     }
     $comments = Comment::getAll();
