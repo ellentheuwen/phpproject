@@ -129,7 +129,7 @@ class Post
         //$timeOfPost = $this->time;
         //var_dump($timeOfPost);
 
-        $timeOfPostCode = strtotime($timeOfPost); // uit databank de tijd halen
+        $timeOfPostCode = strtotime($timeOfPost); // TIME OUT OF DB
         $timeStatus = '';
         $seconds = $currentTime - $timeOfPostCode;
         $minutes = (int) floor($seconds / 60);
