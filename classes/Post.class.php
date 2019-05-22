@@ -60,15 +60,9 @@ class Post
         $statement->execute();
         $id = $statement->fetch(PDO::FETCH_COLUMN);
 
-        $statement = $conn->prepare('SELECT posts.id,posts.image,posts.description,posts.user_id,
-        posts.date AS images_date,users.avatar 
-        FROM posts,followers,users 
-        WHERE followers.user_id1=:id
-        AND followers.user_id2=posts.user_id 
-        AND followers.user_id2 = users.id 
-        UNION SELECT posts.id,posts.image,posts.description,posts.user_id,posts.date,users.avatar 
-        FROM posts,users 
-        WHERE posts.user_id =:id AND users.id=:id ORDER BY `images_date` DESC limit 20');
+        $statement = $conn->prepare('SELECT *
+        FROM posts 
+        ORDER BY `date` DESC');
 
         $statement->bindValue(':id', $id);
         $statement->execute();
@@ -138,5 +132,59 @@ class Post
         arsort($palette);
 
         return array_slice(array_keys($palette), 0, $num);
+    }
+
+    public static function timeStatus($timeOfPost)
+    {
+        $currentTime = time();   // NOW
+
+        //$timeOfPost = self::getTimeNow();
+        //$timeOfPost = $this->time;
+        //var_dump($timeOfPost);
+
+        $timeOfPostCode = strtotime($timeOfPost); // uit databank de tijd halen
+        //$timeOfPost = strtotime($row['time']); // uit databank de tijd halen
+        $timeStatus = '';
+        $seconds = $currentTime - $timeOfPostCode;
+        $minutes = (int) floor($seconds / 60);
+        $hours = (int) floor($minutes / 60);
+        $days = (int) floor($hours / 24);
+
+        // hoelang geleden - tijd bepalen
+        if ($seconds < 60) {
+            $timeStatus = 'now';
+        } elseif ($minutes == 1) {
+            $timeStatus = 'a minute ago';
+        } elseif ($minutes == 2) {
+            $timeStatus = 'two minutes ago';
+        } elseif ($minutes == 3) {
+            $timeStatus = 'three minutes ago';
+        } elseif ($minutes < 15) {
+            $timeStatus = 'less than fifteen minutes ago';
+        } elseif ($minutes == 15) {
+            $timeStatus = 'fifteen minutes ago';
+        } elseif ($minutes < 30) {
+            $timeStatus = 'less than half an hour ago';
+        } elseif ($minutes == 30) {
+            $timeStatus = 'half an hour ago';
+        } elseif ($hours < 1) {
+            $timeStatus = 'less than an hour ago';
+        } elseif ($hours == 1) {
+            $timeStatus = 'an hour ago';
+        } elseif ($hours == 2) {
+            $timeStatus = 'two hours ago';
+        } elseif ($hours == 3) {
+            $timeStatus = 'three hours ago';
+        } elseif ($days < 1) {
+            $timeStatus = 'less than a day ago';
+        } elseif ($days == 1 && $seconds > 1) {
+            $timeStatus = 'yesterday';
+        } elseif ($days == 2 && $seconds > 1) {
+            $timeStatus = 'the day before yesterday';
+        } else {
+            $timeStatus = date('d / m / Y', time() - $seconds);
+        }
+
+        return $timeStatus;
     }
 }

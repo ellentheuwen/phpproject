@@ -2,29 +2,29 @@
 include_once 'bootstrap.php';
 
 session_start();
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 $posts = Post::detailPagina();
 
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet"></head>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css"> 
 	<title>Let's Talk Type — Detail</title></head>
 <body>
 
 <?php include_once 'nav.inc.php'; ?>
 
 <div class="collection__detail" style="margin-top:180px">
-	<?php foreach ($posts as $c): ?>
+	<?php foreach ($posts as $c):
+            $timeStatus = Post::timeStatus($c['date']);
+            ?>
 	<img src="<?php echo $c['image']; ?>" alt="Post">
-
+	<p><span class="postedtitle">Posted: </span><?php echo $timeStatus; ?></p>
 	  <div class="clearfix">
 	  <p><span class="descriptiontitle" style="margin-left:-100px;">Colors in this post: </span></p>
 
@@ -49,9 +49,10 @@ $posts = Post::detailPagina();
     if (!empty($_POST)) {
         try {
             $comment = new Comment();
-            $comment->setText($_POST['comment']);
+            $comment->setText(htmlspecialchars(($_POST['comment'])));
             $comment->Save();
         } catch (\Throwable $th) {
+            //throw $th;
         }
     }
     $comments = Comment::getAll();
@@ -84,17 +85,17 @@ $posts = Post::detailPagina();
 		src="https://code.jquery.com/jquery-3.3.1.min.js"
 		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 		crossorigin="anonymous">
-	</script>
-
+</script>
 <script>
 	$("#btnSubmit").on("click",function(e){
 
 		var text = $("#comment").val();
+		$id = $_GET['id'];
 
 		$.ajax({
   			method: "POST",
   			url: "ajax/postcomment.php",
-  			data: { text: text, post_id:<?php $_GET['id']; ?>},
+  			data: { text: text, post_id: $id},
 			dataType: 'json'
 		})
   		.done(function( res ) {
@@ -104,11 +105,10 @@ $posts = Post::detailPagina();
 				$("#comment").val("").focus();
 				$("#listupdates li").last().slideDown();
 
-			}
-  		});
+				}
+			});
 
 		e.preventDefault();
-
 
 	});
 </script>

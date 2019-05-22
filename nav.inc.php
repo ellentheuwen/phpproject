@@ -14,7 +14,7 @@ $avatar = User::avatar();
      <input type="submit" value="Let's go">
   </form>
 
-  <a href="#">Settings</a>
+  <a href="settings.php">Settings</a>
 
   <a href="#">|</a>
 

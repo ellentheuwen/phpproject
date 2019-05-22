@@ -15,9 +15,10 @@ $bio = User::bio();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Let's Talk Type — Profile</title>
 
-  <link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/profiel.css">
+    <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet"></head>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
 <?php include_once 'nav.inc.php'; ?>
@@ -46,41 +47,25 @@ $conn = Db::getInstance();
 
 if (isset($_POST['submit'])) {
     $bio = $_POST['bio'];
-
-    if (empty($bio)) {
-        echo "<font color='red'>Tekstveld is leeg!</font><br/>";
-    } else {
-        $statement = $conn->prepare("SELECT id 
+    $statement = $conn->prepare("SELECT id 
                                       FROM users 
                                       WHERE email = '".$_SESSION['email']."'");
-        $statement->execute();
-        $id = $statement->fetch(PDO::FETCH_COLUMN);
+    $statement->execute();
+    $id = $statement->fetch(PDO::FETCH_COLUMN);
 
-        $insert = $conn->prepare("UPDATE users 
+    $insert = $conn->prepare("UPDATE users 
                                   SET bio = '".$bio."' 
                                   WHERE users.id='".$id."';");
-        $insert->bindParam(':bio', $bio);
-        $insert->execute();
-    }
+    $insert->bindParam(':bio', $bio);
+    $insert->execute();
 }
+
     ?>
     
-    <form method="post" action="profiel.php">  
+    <form method="post" action="settings.php">  
 <textarea name="bio" rows="5" cols="40" placeholder="Schrijf hier iets over jezelf!"><?php echo $bio; ?></textarea>
 <br><br>
 <input type="submit" name="submit" value="Submit">  
-</form>
-      <h3> Gegevens wijzigen </h3>
-
-<ul>
-<li><a href="changePassword.php">Verander wachtwoord</a></li>
-<li><a href="changeEmail.php">Verander email</a></li>
-</ul>
-
-
-
-
-    
 </body>
 </html>
 

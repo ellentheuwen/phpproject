@@ -10,15 +10,14 @@ if (!empty($_POST['submit'])) {
         $error = true;
     } else {
         $user = new User();
-        $user->setEmail($_POST['email']);
-        $user->setPassword($_POST['password']);
-        $user->setFirstname($_POST['firstname']);
-        $user->setLastname($_POST['lastname']);
-        $user->setUsername($_POST['username']);
+        $user->setEmail(htmlspecialchars($_POST['email']));
+        $user->setPassword(htmlspecialchars($_POST['password']));
+        $user->setFirstname(htmlspecialchars($_POST['firstname']));
+        $user->setLastname(htmlspecialchars($_POST['lastname']));
+        $user->setUsername(htmlspecialchars($_POST['username']));
 
         if ($user->register()) {
-            session_start();
-            $_SESSION['email'] = $email;
+            $user->login();
             header('Location:index.php');
         }
     }

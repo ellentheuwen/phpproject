@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 include_once 'bootstrap.php';
 User::checkLogin();
 
@@ -18,7 +17,10 @@ User::checkLogin();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet"></head>
+	  <link rel="stylesheet" href="css/reset.css">
+	  <link rel="stylesheet" href="css/style.css"> 
     <title>Let's Talk Type — Home</title>
 </head>
 <body>
@@ -36,18 +38,20 @@ User::checkLogin();
     <br><textarea name="description" class= "uploaddescription" rows="2" placeholder="Let's write down a description for your post" required></textarea><br>
     <input type="submit" value="Let's upload" name="upload" class="input"/>  
   </form>     
-   
 </div>
 
-  <?php foreach ($posts as $p): ?>
+  <?php foreach ($posts as $p):
+    $timeStatus = Post::timeStatus($p['date']);
+  ?>
   <div class="collection__item">
       <a href="detail.php?id=<?php echo $p['id']; ?>" > <img class="collection--image" src="<?php echo $p['image']; ?>" alt="Post"></a>
         <p><span class="descriptiontitle">Let's talk: </span><?php echo $p['description']; ?></p>
+        <p><span class="descriptiontitle">Posted: </span><?php echo $timeStatus; ?></p>
   </div>
+  
 <?php endforeach; ?> 
 </div>
 
 <?php endif; ?>
-
 </body>
 </html>

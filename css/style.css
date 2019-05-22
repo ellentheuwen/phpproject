@@ -244,10 +244,15 @@ INDEX
   padding: 5px;
 }
 
+
+.collection--image{
+  width: 564px;
+  height: 564px;
+}
+
 .item--container {
   display: flex;
   justify-content: space-around;
-
   padding: 20px;
 }
 
@@ -260,6 +265,14 @@ INDEX
   margin-right: 15px;
 }
 
+.postedtitle {
+  color: #E2BD6B;
+  font-family: 'Staatliches', cursive;
+  font-size: 20px;
+  border-bottom: 2px solid #E2BD6B;
+  margin-right: 75px;
+}
+
 /* 
 DETAIL PAGINA
 */
@@ -270,7 +283,6 @@ DETAIL PAGINA
 
 .collection__detail img {
   width: 50%;
-
 }
 
 .color {
@@ -348,7 +360,7 @@ DETAIL PAGINA
   color: #E2BD6B;
   font-family: 'Staatliches', cursive;
   font-size: 20px;
-    border-bottom: 2px solid #E2BD6B;
+  border-bottom: 2px solid #E2BD6B;
 }
 
 /* 
