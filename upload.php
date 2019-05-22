@@ -24,11 +24,9 @@ if (isset($_FILES['image'])) {
                                         VALUES ('".$newfilename."', '".$description."', '".$id."')");
             header('location:index.php');
         } else {
-            $msg = 'Sorry, de upload is mislukt.';
             header('location:index.php');
         }
     } else {
-        $msg = 'Sorry, enkel afbeeldingen zijn toegestaan.';
         header('location:index.php');
     }
 }
